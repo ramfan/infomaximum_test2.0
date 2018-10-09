@@ -27,6 +27,7 @@ export const theme = {
         },
         secondBlock: {
             paddingBottom: '100px',
+            height: '100vh',
             marginLeft: 'auto',
             marginTop: 'auto',
             marginRight: 'auto',
@@ -86,4 +87,20 @@ export const theme = {
             social: {textAlign: 'center', color: '#FF9315', fontSize: '14px'},
         }
     },
+    LeftBlock: {
+        mainPage: {
+            rootStyle: {position: 'fixed', padding: 0, marginTop: '5%'},
+            item: {paddingLeft: '20px', paddingTop: 'inherit', paddingBottom: 'inherit', cursor: 'pointer'},
+            logo: {
+                display: 'flex',
+            },
+            logo_color: {
+                background: 'linear-gradient(to left, rgba(255, 147, 21, 0.5) 0%, rgba(238, 12, 40, 0.5) 100%)',
+                //fontSize: '-webkit-xxx-large',
+                '-webkit-background-clip': 'text',
+                color: 'transparent',
+            },
+            info: {paddingLeft: '14px', fontSize: '80%', display: 'inline-block', minWidth: '180px', color: '#9C9C9C'}
+        }
+    }
 };

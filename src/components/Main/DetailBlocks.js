@@ -7,6 +7,7 @@ class DetailBlocks extends PureComponent {
     render() {
         const {
             secondBlock: {
+                height,
                 paddingBottom,
                 marginBottom,
                 marginLeft,
@@ -20,7 +21,7 @@ class DetailBlocks extends PureComponent {
             },
         } = this.props.theme.landingPage;
         return (
-            <Row justify={'between'} style={{paddingBottom, background: this.props.color}}>
+            <Row justify={'between'} style={{paddingBottom, background: this.props.color, height}}>
                 <Col md={2}></Col>
                 <Col md={8} style={{ marginTop, marginBottom, marginLeft, marginRight,textAlign}}>
                     <Row>

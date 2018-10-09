@@ -1,5 +1,4 @@
 import React, {PureComponent} from 'react';
-import PropTypes from 'prop-types';
 import {Col, Row} from 'react-grid-system';
 import {withTheme} from 'react-fela';
 import {CustomButton} from '../../utils/CustomElements';
@@ -9,7 +8,6 @@ class FirstBlock extends PureComponent {
 
     render() {
         const {
-            background,
             firstBlock: {
                 backgroundImage,
                 backgroundRepeat,

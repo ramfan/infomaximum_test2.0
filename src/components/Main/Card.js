@@ -7,7 +7,6 @@ class Card extends PureComponent {
     render() {
         const {icon, title, detail} = this.props;
         const { rootStyle, forIcon, titleStyle, titleColor, detail: detailStyle, detailFont  } = this.props.theme.landingPage.card;
-        console.log(this.props);
         return (
             <Row style={rootStyle}>
                 <Row style={forIcon}>

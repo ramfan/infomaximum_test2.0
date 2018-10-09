@@ -16,3 +16,10 @@ const button = ({color = '#000000', margin = '0', border = '0'}) => ({
     margin: margin
 });
 export const CustomButton = createComponent(button, 'button');
+
+const spansInMainPage = () => ({
+    paddingTop: '15px',
+    paddingBottom: '15px',
+    display: 'block'
+});
+export const CustomSpans = createComponent(spansInMainPage, 'span');

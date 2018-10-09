@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
 import store from './store';
-import {Route, Switch} from 'react-router';
+import {Route, Router, Switch} from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 import MainPage from './components/Main/MainPage';
 import {ThemeProvider} from 'react-fela';
 import { Provider as FellaProvider } from 'react-fela';
@@ -16,7 +17,11 @@ class Root extends Component {
             <Provider store={store}>
                 <FellaProvider renderer={renderer}>
                     <ThemeProvider theme={theme}>
-                        <MainPage/>
+                        <BrowserRouter>
+                            <Route>
+                                <Route path='/' component={MainPage}/>
+                            </Route>
+                        </BrowserRouter>
                     </ThemeProvider>
                 </FellaProvider>
             </Provider>
