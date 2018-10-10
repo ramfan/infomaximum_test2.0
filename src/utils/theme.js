@@ -100,7 +100,18 @@ export const theme = {
                 '-webkit-background-clip': 'text',
                 color: 'transparent',
             },
-            info: {paddingLeft: '14px', fontSize: '80%', display: 'inline-block', minWidth: '180px', color: '#9C9C9C'}
+            info: {paddingLeft: '14px', fontSize: '80%', display: 'inline-block', minWidth: '180px', color: '#9C9C9C'},
+            buttonRow: {display: 'inline-block', lineHeight: '19px', marginLeft: '5%', marginBottom: '10%'},
+            buttonCol: {
+                display: 'block',
+                background: 'linear-gradient(to left, rgba(255, 147, 21, 0.5) 0%, rgba(238, 12, 40, 0.5) 100%)',
+                borderRadius: '13px',
+                padding: '2px',
+            },
+            customButton: {
+                width: 'max-content',
+                fontSize: 'smaller'
+            }
         }
     }
 };
