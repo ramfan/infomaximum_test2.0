@@ -1,11 +1,26 @@
+/* eslint-disable no-class-assign */
 import React, {PureComponent} from 'react';
 import {Row, Col} from 'react-grid-system';
 import {withTheme} from 'react-fela';
 import {CustomButton, CustomSpans} from '../../utils/CustomElements';
 import logoIcon from '../../assets/logo.svg';
 import MenuItem from './MenuItem';
+import {Link, Route} from 'react-router-dom';
+import {actionCreators} from '../../duckStore';
+import {connect} from 'react-redux';
 
 class Left extends PureComponent {
+    constructor(props){
+        super(props);
+        this.toggleShow = this.toggleShow.bind(this);
+        this.state = {
+            showPopup: false,
+        };
+    }
+    toggleShow() {
+        this.props.showPopup(true);
+    }
+
     render() {
         const { rootStyle, logo, logo_color, info, buttonRow, buttonCol, customButton } = this.props.theme.LeftBlock.mainPage;
         return (
@@ -32,9 +47,9 @@ class Left extends PureComponent {
                         </Col>
                     </Row>
                     <Row style={buttonRow}>
-                        <Col style={buttonCol}>
+                        <Col style={buttonCol}  onClick={this.toggleShow}>
                             <CustomButton style={customButton}>
-                                Вход/Регистрация
+                                Вход / Регистрация
                             </CustomButton>
                         </Col>
                     </Row>
@@ -51,5 +66,6 @@ class Left extends PureComponent {
         );
     }
 }
-
-export default withTheme(Left);
+const {showPopup} = actionCreators;
+Left = withTheme(Left);
+export default connect(null, {showPopup})(Left);

@@ -1,6 +1,11 @@
 import landing from '../assets/landing.png';
 
 export const theme = {
+    background: 'linear-gradient(to right, #EE0C28, #FF9315)',
+    linkStyle: {
+        textDecoration: 'none',
+        color: '#000000'
+    },
     landingPage: {
 
         background: '#000000',
@@ -110,8 +115,32 @@ export const theme = {
             },
             customButton: {
                 width: 'max-content',
-                fontSize: 'smaller'
+                fontSize: 'smaller',
+                padding: '8px 30px 9px 38px'
             }
         }
+    },
+    paddingNull: {padding: 0},
+    authForm: {
+        rootStyle: {background: 'rgba(0, 0, 0, 0.8)', width: '100%', height: '100vh', position: 'fixed', zIndex: 98, margin: 0},
+        upperHelpRow: {height: '10vh', width: '100%', marginLeft: 0},
+        lowerHelpRow: {height: '100vh', width: '100%', marginLeft: 0},
+        baseColumn: {background: 'red' , margin: '0 auto',marginBottom: 0, marginRight: 0},
+        formColumn: {background: '#FFFFFF', margin: '0 auto', marginRight: 0},
+        activeColumn: {textAlign: 'center', borderBottom: '4px solid #EE0C28', cursor: 'pointer'},
+        activeSpan: {display: 'block', marginTop: '5%', color: '#EE0C28'},
+        disActiveSpan: {display: 'block', marginTop: '5%', color: 'rgba(0, 0, 0, 0.6)', cursor: 'pointer'},
+        disActiveColumn: {textAlign: 'center'},
+        headerRow: {height: '50px', marginBottom: '10%'},
+        renderFieldButton: {textAlign: 'center', paddingTop: '5px', paddingBottom: '5px', cursor: 'pointer', color: '#EE0C28', display: 'block'},
+        socialBlock: {
+            title: {textAlign: 'center', color: '#FFFFFF'},
+            Icon: {display: 'block', margin: '0 auto'},
+            Icons: {padding: '30px'},
+            root: {background: 'linear-gradient(to right, #EE0C28, #FF9315)', marginBottom: '10%', padding: '30px'}
+        }
+    },
+    clickElement: {
+        cursor: 'pointer'
     }
 };

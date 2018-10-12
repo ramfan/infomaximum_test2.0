@@ -23,3 +23,4 @@ const spansInMainPage = () => ({
     display: 'block'
 });
 export const CustomSpans = createComponent(spansInMainPage, 'span');
+
