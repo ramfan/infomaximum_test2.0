@@ -31,14 +31,14 @@ class Auth extends PureComponent {
                                     <HeaderAuth />
                                     <Role/>
                                     <SocialAuth headerBlock={'Регистрация через соц. сети'}/>
-                                    <AuthForm describe={'ЗАРЕГИСТРИРОВАТЬСЯ'}/>
+                                    <AuthForm describe={'ЗАРЕГИСТРИРОВАТЬСЯ'} username={true}/>
                                 </Col>
                                 :
                                 <Col md={12} style={formColumn} >
 
                                     <HeaderAuth />
                                     <SocialAuth headerBlock={'Вход через соц. сети'}/>
-                                    <AuthForm describe={'ВОЙТИ'}/>
+                                    <AuthForm describe={'ВОЙТИ'} username={false}/>
                                 </Col>
                         }
                     </Row>

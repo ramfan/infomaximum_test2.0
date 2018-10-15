@@ -6,7 +6,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
 }
-
+#root{
+  margin: 0;
+  padding: 0 ;
+}
 .active{
   height: 25px;
   border-left: 4px solid #EE0C28;

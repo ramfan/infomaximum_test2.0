@@ -27,7 +27,7 @@ class FirstBlock extends PureComponent {
                             <span style={spans('40px')}>без лишних затрат</span><br/>
                             <span style={spans('15px')}>Наши виджеты &laquo;Регистрация&raquo;, &laquo;Участники&raquo;, &laquo;Команды&raquo; и &laquo;Проекты&raquo; пзволяют вам </span><br/>
                             <span style={spans('15px')}> быстро запустить любое IT-мероприятие в кратчайшие сроки</span><br/>
-                            <CustomButton color={'#E5001C'} margin={'1%'}>
+                            <CustomButton color={'#E5001C'} margin={'1%'} paddingTop={'6px'} paddingBottom={'8px'} paddingLeft={'40px'} paddingRight={'40px'}>
                                 <strong>+ &nbsp; Создать событие</strong>
                             </CustomButton>
                         </Col>

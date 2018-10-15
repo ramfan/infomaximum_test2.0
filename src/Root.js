@@ -9,6 +9,7 @@ import { Provider as FellaProvider } from 'react-fela';
 import {createRenderer} from 'fela';
 import {theme} from './utils/theme';
 import Auth from './containers/Auth/Auth';
+import DashBoardLayout from './containers/Dashboard/DashBoardLayout';
 
 class Root extends Component {
 
@@ -22,6 +23,7 @@ class Root extends Component {
                             <Switch>
                                 <Route exact path='/' component={MainPage}/>
                                 <Route path='/auth' component={Auth}/>
+                                <Route path='/dashSys' component={DashBoardLayout}/>
                             </Switch>
                         </BrowserRouter>
                     </ThemeProvider>

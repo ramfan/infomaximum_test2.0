@@ -98,9 +98,10 @@ export const theme = {
             item: {paddingLeft: '20px', paddingTop: 'inherit', paddingBottom: 'inherit', cursor: 'pointer'},
             logo: {
                 display: 'flex',
+                padding: '15px'
             },
             logo_color: {
-                background: 'linear-gradient(to left, rgba(255, 147, 21, 0.5) 0%, rgba(238, 12, 40, 0.5) 100%)',
+                background: 'linear-gradient(to left, rgba(255, 147, 21, 1) 0%, rgba(238, 12, 40, 1) 100%)',
                 //fontSize: '-webkit-xxx-large',
                 '-webkit-background-clip': 'text',
                 color: 'transparent',
@@ -109,9 +110,9 @@ export const theme = {
             buttonRow: {display: 'inline-block', lineHeight: '19px', marginLeft: '5%', marginBottom: '10%'},
             buttonCol: {
                 display: 'block',
-                background: 'linear-gradient(to left, rgba(255, 147, 21, 0.5) 0%, rgba(238, 12, 40, 0.5) 100%)',
-                borderRadius: '13px',
-                padding: '2px',
+                background: 'linear-gradient(to left, rgba(255, 147, 21, 1) 0%, rgba(238, 12, 40, 1) 100%)',
+                borderRadius: '15px',
+                padding: '1px',
             },
             customButton: {
                 width: 'max-content',
@@ -142,5 +143,20 @@ export const theme = {
     },
     clickElement: {
         cursor: 'pointer'
-    }
+    },
+    LinkStyle: {
+        textDecoration: 'none'
+    },
+    systemLayout: {background: '#E5E5E5', height: '100vh', padding: '50px 100px 100px 100px'},
+    event: {
+        root: {margin: '0 auto',background: 'white'},
+        description: {fontSize: '10px', letterSpacing: '1.5px', lineHeight: '12px'},
+        title: {fontSize: '24px'},
+        subscribe: {fontSize: '14px', lineHeight: '20px', color: 'rgba(0, 0, 0, 0.6)'},
+        iconSection: {overflow: 'hidden'},
+        eventIcon: {height: '50px'}
+    },
+    dispaly: ({disPlay = 'block'}) => ({
+        display: disPlay
+    })
 };

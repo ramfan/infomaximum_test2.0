@@ -1,7 +1,18 @@
 import {createComponent} from 'react-fela';
 import React from 'react';
 
-const button = ({color = '#000000', margin = '0', border = '0'}) => ({
+const button = ({
+    color = '#000000',
+    margin = '0', border = '0',
+    paddingTop = '0px',
+    paddingBottom = '0px',
+    paddingLeft = '0px',
+    paddingRight = '0px',
+    width = '',
+    boxShadow = 'none',
+    fontSize = '14px'
+}) => ({
+    width: width,
     padding: 0,
     border: border,
     font: 'inherit',
@@ -9,11 +20,13 @@ const button = ({color = '#000000', margin = '0', border = '0'}) => ({
     backgroundColor: '#FFFFFF',
     borderRadius: '13px',
     color: color,
-    paddingTop: '6px',
-    paddingBottom: '8px',
-    paddingLeft: '40px',
-    paddingRight: '40px',
-    margin: margin
+    paddingTop: paddingTop,
+    paddingBottom: paddingBottom,
+    paddingLeft: paddingLeft,
+    paddingRight: paddingRight,
+    margin: margin,
+    boxShadow: boxShadow,
+    fontSize: fontSize
 });
 export const CustomButton = createComponent(button, 'button');
 

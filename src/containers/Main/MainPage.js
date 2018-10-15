@@ -4,7 +4,7 @@ import Layout from '../../components/Layout';
 import Left from '../../components/Main/Left';
 import Right from '../../components/Main/Right';
 import Auth from '../Auth/Auth';
-import {Col} from 'react-grid-system';
+import {Col, Row} from 'react-grid-system';
 import {withTheme} from 'react-fela';
 
 class MainPage extends PureComponent {
@@ -12,7 +12,7 @@ class MainPage extends PureComponent {
 
     render() {
         return (
-            <Col style={this.props.theme.paddingNull}>
+            <Row style={{marginRight: 0}}>
                 { this.props.toggle?
                     <Col style={this.props.theme.paddingNull}>
                         <Auth/>
@@ -28,8 +28,8 @@ class MainPage extends PureComponent {
                         />
                     </Col>
                 }
-            </Col>
 
+            </Row>
         );
     }
 }

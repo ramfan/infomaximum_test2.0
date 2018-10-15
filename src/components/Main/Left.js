@@ -5,7 +5,6 @@ import {withTheme} from 'react-fela';
 import {CustomButton, CustomSpans} from '../../utils/CustomElements';
 import logoIcon from '../../assets/logo.svg';
 import MenuItem from './MenuItem';
-import {Link, Route} from 'react-router-dom';
 import {actionCreators} from '../../duckStore';
 import {connect} from 'react-redux';
 
