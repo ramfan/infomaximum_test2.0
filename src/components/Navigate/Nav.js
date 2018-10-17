@@ -4,6 +4,7 @@ import { withTheme } from 'react-fela';
 import { CustomButton, CustomSpans } from '../../utils/CustomElements';
 import logoIcon from '../../assets/logo.svg';
 import GroupNavItems from './GroupNavItems';
+import CreateEventButton from '../../containers/Navigate/CreateEventButton';
 
 
 class Nav extends PureComponent {
@@ -27,22 +28,8 @@ class Nav extends PureComponent {
                             </Row>
                         </Col>
                     </Row>
-                    <Row style={this.props.theme.dispaly('contents')}>
-                        <Col style={{ display: 'flex' }}>
-                            <CustomButton
-                                color={'#E5001C'}
-                                margin={'0 auto'}
-                                width={''}
-                                boxShadow={'0px 1px 1px 0px rgba(224,224,224,1)'}
-                                paddingTop={'8px'}
-                                paddingBottom={'10px'}
-                                paddingLeft={'40px'}
-                                paddingRight={'35px'}
-                                fontSize={'12px'}
-                            >
-                                + &nbsp; Создать событие
-                            </CustomButton>
-                        </Col>
+                    <Row style={this.props.theme.display('contents')}>
+                        <CreateEventButton/>
                     </Row>
 
                     <Row >

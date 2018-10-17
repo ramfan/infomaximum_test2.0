@@ -11,6 +11,10 @@ import store from './store';
 import { theme } from './utils/theme';
 import Auth from './containers/Auth/Auth';
 import DashBoardLayout from './containers/Dashboard/DashBoardLayout';
+import Layout from './components/Layout';
+import CreateEvent from './components/Event/CreateEvent';
+import System from './components/Dashboard/System';
+import Nav from './components/Navigate/Nav';
 
 class Root extends Component {
     render() {
@@ -23,7 +27,18 @@ class Root extends Component {
                             <Switch>
                                 <Route exact path='/' component={MainPage}/>
                                 <Route path='/auth' component={Auth}/>
-                                <Route path='/dashSys' component={DashBoardLayout}/>
+                                {/* <Route path='/createEvent' component={CreateEvent}/> */}
+                                <Layout left={
+                                    <Switch>
+                                        <Route path='/createEvent' component={Nav}/>
+                                        <Route path='/dashSys' component={Nav}/>
+                                    </Switch>
+                                } right={
+                                    <Switch>
+                                        <Route path='/createEvent' component={CreateEvent}/>
+                                        <Route path='/dashSys' component={System}/>
+                                    </Switch>
+                                }/>
                             </Switch>
                         </BrowserRouter>
                     </ThemeProvider>

@@ -3,6 +3,7 @@ const actionTypes = {
     SHOW_POPUP: 'SHOW_POPUP',
     GET_REGISTER_FORM: 'GET_REGISTER_FORM',
     GET_AUTHORIZATION_FORM: 'GET_AUTHORIZATION_FORM',
+    CREATE_EVENT: ' CREATE_EVENT',
 };
 
 export const actionCreators = {
@@ -14,11 +15,16 @@ export const actionCreators = {
             type: actionTypes.GET_REGISTER_FORM,
             payload: { flagRegister },
         }),
+    getCreateEvent: flag => ({
+        type: actionTypes.CREATE_EVENT,
+        payload: flag,
+    }),
 };
 
 const initialState = {
     showPopup: false,
     getRegisterForm: false,
+    createEvent: false,
 };
 
 export const duckReducer = (state = initialState, action) => {
@@ -34,6 +40,12 @@ export const duckReducer = (state = initialState, action) => {
             return {
                 ...state,
                 getRegisterForm: payload.flagRegister,
+            };
+        }
+        case actionTypes.CREATE_EVENT: {
+            return {
+                ...state,
+                createEvent: payload,
             };
         }
     default: {

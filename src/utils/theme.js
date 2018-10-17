@@ -168,11 +168,16 @@ export const theme = {
     },
     clickElement: {
         cursor: 'pointer',
+        textDecoration: 'none',
+        color: 'rgba(0, 0, 0, 0.87)',
+        display: 'flex',
     },
     LinkStyle: {
         textDecoration: 'none',
     },
-    systemLayout: { background: '#E5E5E5', height: '100vh', padding: '50px 100px 100px 100px' },
+    systemLayout: {
+        background: '#E5E5E5', padding: '44px 100px 100px 100px',
+    },
     event: {
         root: { margin: '0 auto', background: 'white' },
         description: { fontSize: '10px', letterSpacing: '1.5px', lineHeight: '12px' },
@@ -181,7 +186,7 @@ export const theme = {
         iconSection: { overflow: 'hidden' },
         eventIcon: { height: '50px' },
     },
-    dispaly: ({ disPlay = 'block' }) => ({
+    display: ({ disPlay = 'block' }) => ({
         display: disPlay,
     }),
 };

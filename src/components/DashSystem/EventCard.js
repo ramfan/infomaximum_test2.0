@@ -18,10 +18,13 @@ class EventCard extends PureComponent {
                         }}>{this.props.subTitle}</span>
                     </Col>
                 </Row>
-                <Row style={{ marginLeft: 0, marginRight: 0, marginTop: '1%' }}>
+                <Row style={{
+                    marginLeft: 0, marginRight: 0, marginTop: '1%', padding: '20px 15px',
+                }}>
                     <Col>
                         <span style={{
                             fontSize: '60px',
+                            fontWeight: '100',
                         }}>{this.props.num}</span>
                         &nbsp;&nbsp;
                         <span>{this.props.word}</span>
