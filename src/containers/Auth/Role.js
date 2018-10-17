@@ -1,7 +1,8 @@
-import React, {PureComponent} from 'react';
-import {withTheme} from 'react-fela';
-import {connect} from 'react-redux';
-import {Col, Row} from 'react-grid-system';
+/* eslint-disable max-len */
+import React, { PureComponent } from 'react';
+import { withTheme } from 'react-fela';
+import { connect } from 'react-redux';
+import { Col, Row } from 'react-grid-system';
 import checked from '../../assets/ic_radio_button_checked_24px.svg';
 import unchecked from '../../assets/radio_button_unchecked_24px.svg';
 
@@ -13,25 +14,27 @@ class Role extends PureComponent {
         this.handleCreate = this.handleCreate.bind(this);
         this.state = {
             participate: true,
-            create: false
+            create: false,
         };
     }
 
-    handleParticipate(){
+    handleParticipate() {
         this.setState({
             participate: true,
             create: false,
         });
     }
-    handleCreate(){
+
+    handleCreate() {
         this.setState({
             participate: false,
             create: true,
         });
     }
+
     render() {
-        const participant = this.state.participate? checked : unchecked;
-        const creator = this.state.create? checked : unchecked;
+        const participant = this.state.participate ? checked : unchecked;
+        const creator = this.state.create ? checked : unchecked;
         return (
             <Col md={7}>
                 <Row>

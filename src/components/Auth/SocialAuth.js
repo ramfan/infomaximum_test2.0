@@ -1,14 +1,12 @@
-import React, {PureComponent} from 'react';
-import {Col, Row} from 'react-grid-system';
+import React, { PureComponent } from 'react';
+import { Col, Row } from 'react-grid-system';
+import { withTheme } from 'react-fela';
 import Social from './Social';
-import facebook from'../../assets/ICON FACEBOOK.svg';
-import vk from'../../assets/XMLID 807.svg';
-import twitter from'../../assets/ICON TWITTER.svg';
-import {withTheme} from 'react-fela';
+import facebook from '../../assets/ICON FACEBOOK.svg';
+import vk from '../../assets/XMLID 807.svg';
+import twitter from '../../assets/ICON TWITTER.svg';
 
 class SocialAuth extends PureComponent {
-
-
     render() {
         return (
             <Row justify={'between'}>

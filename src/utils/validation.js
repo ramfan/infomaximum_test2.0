@@ -1,4 +1,5 @@
-export const validate = values => {
+/* eslint-disable import/prefer-default-export */
+export const validate = (values) => {
     const errors = {};
     if (!values.password) {
         errors.password = 'Required';

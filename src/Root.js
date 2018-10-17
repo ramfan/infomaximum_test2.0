@@ -1,21 +1,21 @@
-import React, {Component} from 'react';
-import {Provider} from 'react-redux';
-import store from './store';
-import {Route, Router, Switch} from 'react-router';
+/* eslint-disable import/no-duplicates */
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import { Route, Router, Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-import MainPage from './containers/Main/MainPage';
-import {ThemeProvider} from 'react-fela';
+import { ThemeProvider } from 'react-fela';
 import { Provider as FellaProvider } from 'react-fela';
-import {createRenderer} from 'fela';
-import {theme} from './utils/theme';
+import { createRenderer } from 'fela';
+import MainPage from './containers/Main/MainPage';
+import store from './store';
+import { theme } from './utils/theme';
 import Auth from './containers/Auth/Auth';
 import DashBoardLayout from './containers/Dashboard/DashBoardLayout';
 
 class Root extends Component {
-
     render() {
         const renderer = createRenderer();
-        return(
+        return (
             <Provider store={store}>
                 <FellaProvider renderer={renderer}>
                     <ThemeProvider theme={theme}>
@@ -35,4 +35,3 @@ class Root extends Component {
 }
 
 export default Root;
-

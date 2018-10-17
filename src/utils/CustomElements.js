@@ -1,4 +1,4 @@
-import {createComponent} from 'react-fela';
+import { createComponent } from 'react-fela';
 import React from 'react';
 
 const button = ({
@@ -10,30 +10,29 @@ const button = ({
     paddingRight = '0px',
     width = '',
     boxShadow = 'none',
-    fontSize = '14px'
+    fontSize = '14px',
 }) => ({
-    width: width,
+    width,
     padding: 0,
-    border: border,
+    border,
     font: 'inherit',
     cursor: 'pointer',
     backgroundColor: '#FFFFFF',
     borderRadius: '13px',
-    color: color,
-    paddingTop: paddingTop,
-    paddingBottom: paddingBottom,
-    paddingLeft: paddingLeft,
-    paddingRight: paddingRight,
-    margin: margin,
-    boxShadow: boxShadow,
-    fontSize: fontSize
+    color,
+    paddingTop,
+    paddingBottom,
+    paddingLeft,
+    paddingRight,
+    margin,
+    boxShadow,
+    fontSize,
 });
 export const CustomButton = createComponent(button, 'button');
 
 const spansInMainPage = () => ({
     paddingTop: '15px',
     paddingBottom: '15px',
-    display: 'block'
+    display: 'block',
 });
 export const CustomSpans = createComponent(spansInMainPage, 'span');
-

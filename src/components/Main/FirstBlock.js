@@ -1,11 +1,9 @@
-import React, {PureComponent} from 'react';
-import {Col, Row} from 'react-grid-system';
-import {withTheme} from 'react-fela';
-import {CustomButton} from '../../utils/CustomElements';
+import React, { PureComponent } from 'react';
+import { Col, Row } from 'react-grid-system';
+import { withTheme } from 'react-fela';
+import { CustomButton } from '../../utils/CustomElements';
 
 class FirstBlock extends PureComponent {
-
-
     render() {
         const {
             firstBlock: {
@@ -15,13 +13,15 @@ class FirstBlock extends PureComponent {
                 positionTitle,
                 backgroundSize,
                 width,
-                spans
+                spans,
             },
         } = this.props.theme.landingPage;
         return (
             <Row>
-                <Col md={12} style={{backgroundImage, backgroundRepeat, backgroundPositionX, backgroundSize}}>
-                    <Row style={{width}}>
+                <Col md={12} style={{
+                    backgroundImage, backgroundRepeat, backgroundPositionX, backgroundSize,
+                }}>
+                    <Row style={{ width }}>
                         <Col md={8} style={positionTitle}>
                             <span style={spans('50px', 'bold')}>Запустите IT-событие</span><br/>
                             <span style={spans('40px')}>без лишних затрат</span><br/>

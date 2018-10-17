@@ -1,12 +1,14 @@
-import React, {PureComponent} from 'react';
-import {Col, Row} from 'react-grid-system';
+/* eslint-disable max-len */
+import React, { PureComponent } from 'react';
+import { Col, Row } from 'react-grid-system';
+import { withTheme } from 'react-fela';
 import EventImage from '../../assets/EventImage.png';
-import {withTheme} from 'react-fela';
 
 class Event extends PureComponent {
-
     render() {
-        const {root, description, title, subscribe, iconSection, eventIcon} = this.props.theme.event;
+        const {
+            root, description, title, subscribe, iconSection, eventIcon,
+        } = this.props.theme.event;
         return (
             <Row style={root}>
                 <Col md={12} >

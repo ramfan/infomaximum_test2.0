@@ -6,38 +6,34 @@ const actionTypes = {
 };
 
 export const actionCreators = {
-    showPopup: (flag) => {
-        return {
+    showPopup: flag => ({
             type: actionTypes.SHOW_POPUP,
-            payload: {flag}
-        };
-    },
-    getRegister: (flagRegister) => {
-        return {
+            payload: { flag },
+        }),
+    getRegister: flagRegister => ({
             type: actionTypes.GET_REGISTER_FORM,
-            payload: {flagRegister}
-        };
-    }
+            payload: { flagRegister },
+        }),
 };
 
 const initialState = {
-    showPopup : false,
-    getRegisterForm: false
+    showPopup: false,
+    getRegisterForm: false,
 };
 
 export const duckReducer = (state = initialState, action) => {
-    const {type, payload} = action;
+    const { type, payload } = action;
     switch (type) {
         case actionTypes.SHOW_POPUP: {
             return {
                 ...state,
-                showPopup: payload.flag
+                showPopup: payload.flag,
             };
         }
         case actionTypes.GET_REGISTER_FORM: {
             return {
                 ...state,
-                getRegisterForm: payload.flagRegister
+                getRegisterForm: payload.flagRegister,
             };
         }
     default: {

@@ -1,10 +1,8 @@
-import React, {PureComponent} from 'react';
-import PropTypes from 'prop-types';
-import {Col} from 'react-grid-system';
-import {withTheme} from 'react-fela';
+import React, { PureComponent } from 'react';
+import { Col } from 'react-grid-system';
+import { withTheme } from 'react-fela';
 
 class Social extends PureComponent {
-
     render() {
         return (
             <Col md={4} >

@@ -1,8 +1,8 @@
-import React, {PureComponent} from 'react';
-import {Col, Row} from 'react-grid-system';
-import { withTheme} from 'react-fela';
-import {actionCreators} from '../../duckStore/index';
-import {connect} from 'react-redux';
+import React, { PureComponent } from 'react';
+import { Col, Row } from 'react-grid-system';
+import { withTheme } from 'react-fela';
+import { connect } from 'react-redux';
+import { actionCreators } from '../../duckStore/index';
 import AuthForm from '../../components/Forms/AuthForm';
 import SocialAuth from '../../components/Auth/SocialAuth';
 import HeaderAuth from './HeaderAuth';
@@ -10,15 +10,19 @@ import Role from './Role';
 
 
 class Auth extends PureComponent {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.toggleHide = this.toggleHide.bind(this);
     }
-    toggleHide(){
+
+    toggleHide() {
         this.props.showPopup(false);
     }
+
     render() {
-        const { rootStyle, upperHelpRow, lowerHelpRow, baseColumn, formColumn } = this.props.theme.authForm;
+        const {
+            rootStyle, upperHelpRow, lowerHelpRow, baseColumn, formColumn,
+        } = this.props.theme.authForm;
         return (
             <Row style={ rootStyle }>
                 <Row onClick={this.toggleHide} style={upperHelpRow}></Row>
@@ -26,15 +30,14 @@ class Auth extends PureComponent {
                 <Col style={baseColumn}>
                     <Row >
                         {
-                            this.props.getRegisterForm?
-                                <Col md={12} style={formColumn} >
+                            this.props.getRegisterForm
+                                ? <Col md={12} style={formColumn} >
                                     <HeaderAuth />
                                     <Role/>
                                     <SocialAuth headerBlock={'Регистрация через соц. сети'}/>
                                     <AuthForm describe={'ЗАРЕГИСТРИРОВАТЬСЯ'} username={true}/>
                                 </Col>
-                                :
-                                <Col md={12} style={formColumn} >
+                                : <Col md={12} style={formColumn} >
 
                                     <HeaderAuth />
                                     <SocialAuth headerBlock={'Вход через соц. сети'}/>
@@ -49,9 +52,9 @@ class Auth extends PureComponent {
         );
     }
 }
-const {showPopup} = actionCreators;
+const { showPopup } = actionCreators;
 // eslint-disable-next-line no-class-assign
 Auth = withTheme(Auth);
 export default connect(state => ({
-    getRegisterForm: state.duckReducer.getRegisterForm
-}), {showPopup})(Auth);
+    getRegisterForm: state.duckReducer.getRegisterForm,
+}), { showPopup })(Auth);

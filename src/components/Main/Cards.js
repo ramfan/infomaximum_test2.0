@@ -1,13 +1,12 @@
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
+import { Col, Row } from 'react-grid-system';
+import { withTheme } from 'react-fela';
 import Card from './Card';
 import connectIcon from '../../assets/landing-second-icon-Connect.svg';
 import createIcon from '../../assets/landing-second-icon-Create.svg';
 import regIcon from '../../assets/landing-second-icon-Reg.svg';
-import {Col, Row} from 'react-grid-system';
-import {withTheme} from 'react-fela';
 
 class Cards extends PureComponent {
-
     render() {
         return (
             <Row style={this.props.cards}>

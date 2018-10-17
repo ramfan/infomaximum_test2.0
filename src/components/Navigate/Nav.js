@@ -1,33 +1,34 @@
-import React, {PureComponent} from 'react';
-import {Col, Row} from 'react-grid-system';
-import {CustomButton, CustomSpans} from '../../utils/CustomElements';
+import React, { PureComponent } from 'react';
+import { Col, Row } from 'react-grid-system';
+import { withTheme } from 'react-fela';
+import { CustomButton, CustomSpans } from '../../utils/CustomElements';
 import logoIcon from '../../assets/logo.svg';
-import {withTheme} from 'react-fela';
 import GroupNavItems from './GroupNavItems';
 
 
 class Nav extends PureComponent {
-
     render() {
-        const { rootStyle, logo, logo_color, info, buttonRow, buttonCol, customButton } = this.props.theme.LeftBlock.mainPage;
+        const {
+            rootStyle, logo, logoColor, info, buttonRow, buttonCol, customButton,
+        } = this.props.theme.LeftBlock.mainPage;
 
         return (
             <Row>
                 <Col md={12} >
                     <Row>
                         <Col md={12} style={logo}>
-                            <Row >
+                            <Row style={{ margin: '0 auto' }}>
                                 <Col md={2} style={logo}>
-                                    <img src={logoIcon} alt=""/>
+                                    <img src={logoIcon} alt=''/>
                                 </Col>
                                 <Col md={10} style={logo}>
-                                    <CustomSpans style={logo_color}>AdminEventDay</CustomSpans>
+                                    <CustomSpans style={logoColor}>AdminEventDay</CustomSpans>
                                 </Col>
                             </Row>
                         </Col>
                     </Row>
                     <Row style={this.props.theme.dispaly('contents')}>
-                        <Col style={this.props.theme.paddingNull}>
+                        <Col style={{ display: 'flex' }}>
                             <CustomButton
                                 color={'#E5001C'}
                                 margin={'0 auto'}
@@ -43,10 +44,7 @@ class Nav extends PureComponent {
                             </CustomButton>
                         </Col>
                     </Row>
-                    <Row style={buttonRow}>
-                        <Col style={buttonCol}  onClick={this.toggleShow}>
-                        </Col>
-                    </Row>
+
                     <Row >
                         <Col md={12} style={{}}>
                             <GroupNavItems/>
