@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { withTheme } from 'react-fela';
 import { Row, Col } from 'react-grid-system';
+import { Link, Route } from 'react-router-dom';
 import { validate } from '../../utils/validation';
 import { renderField } from '../Auth/FormField';
 import shape from '../../assets/Shape.svg';
@@ -11,41 +12,41 @@ class EventForm extends PureComponent {
         return (
             <Row>
                 <Col md={12}>
-                    <Field name='text' type='text' component={renderField} label='Введите название события'/>
+                    <Field name='text1' type='text' component={renderField} label='Введите название события'/>
                 </Col>
                 <Col md={12}>
                     <Row justify={'start'}>
                         <Col md={2}>
-                            <Field name='text' type='date' component={renderField} label=''/>
+                            <Field name='text2' type='date' component={renderField} label=''/>
                         </Col>
                         <Col md={2}>
-                            <Field name='text' type='time' component={renderField} label=''/>
+                            <Field name='text3' type='time' component={renderField} label=''/>
                         </Col>
                         <Col md={2}>
-                            <Field name='text' type='date' component={renderField} label=''/>
+                            <Field name='text4' type='date' component={renderField} label=''/>
                         </Col>
                         <Col md={2}>
-                            <Field name='text' type='time' component={renderField} label=''/>
+                            <Field name='text5' type='time' component={renderField} label=''/>
                         </Col>
                     </Row>
                     <Row>
                         <Col md={12}>
-                            <Field name='text' type='text' component={renderField} label='Место проведения'/>
+                            <Field name='text6' type='text' component={renderField} label='Место проведения'/>
                         </Col>
                     </Row>
                     <Row>
                         <Col md={12}>
-                            <Field name='text' type='text' component={renderField} label='URL события аватара'/>
+                            <Field name='text7' type='text' component={renderField} label='URL события аватара'/>
                         </Col>
                     </Row>
                     <Row>
                         <Col md={12}>
-                            <Field name='text' type='text' component={renderField} label='Описание события'/>
+                            <Field name='text8' type='text' component={renderField} label='Описание события'/>
                         </Col>
                     </Row>
                     <Row align={'center'}>
                         <Col md={8}>
-                            <Field name='text' type='text' component={renderField} label='Ссылка на соц. сеть'/>
+                            <Field name='text9' type='text' component={renderField} label='Ссылка на соц. сеть'/>
                         </Col>
                         <Col md={3} style={{ fontSize: '14px', color: 'rgba(0, 0, 0, 0.54)' }}>
                             <span style={{ cursor: 'pointer' }}><img src={shape} /></span>
@@ -54,17 +55,17 @@ class EventForm extends PureComponent {
                     </Row>
                     <Row>
                         <Col md={12}>
-                            <Field name='text' type='text' component={renderField} label='Призы'/>
+                            <Field name='text10' type='text' component={renderField} label='Призы'/>
                         </Col>
                     </Row>
                     <Row>
                         <Col md={12}>
-                            <Field name='text' type='text' component={renderField} label='Теги для поиска'/>
+                            <Field name='text11' type='text' component={renderField} label='Теги для поиска'/>
                         </Col>
                     </Row>
                     <Row align={'center'}>
                         <Col md={8}>
-                            <Field name='text' type='text' component={renderField} label='ФИО ментора / эксперта'/>
+                            <Field name='text12' type='text' component={renderField} label='ФИО ментора / эксперта'/>
                         </Col>
                         <Col md={4} style={{ fontSize: '14px', color: 'rgba(0, 0, 0, 0.54)' }}>
                             <span style={{ cursor: 'pointer' }}><img src={shape} /></span>
@@ -80,14 +81,18 @@ class EventForm extends PureComponent {
                             }}>ОТМЕНА</span>
                         </Col>
                         <Col md={2}>
-                            <span style={{
-                                fontSize: '14px',
-                                letterSpacing: '0.75px',
-                                background: '#EE0C28',
-                                color: 'white',
-                                padding: '10px 30px 12px 30px',
-                                borderRadius: '4px',
-                            }}>СОЗДАТЬ</span>
+                            <Route>
+                                <Link to={'/event/profile/detail'} style={{ textDecoration: 'none' }}>
+                                    <span style={{
+                                        fontSize: '14px',
+                                        letterSpacing: '0.75px',
+                                        background: '#EE0C28',
+                                        color: 'white',
+                                        padding: '10px 30px 12px 30px',
+                                        borderRadius: '4px',
+                                    }}>СОЗДАТЬ</span>
+                                </Link>
+                            </Route>
                         </Col>
                     </Row>
                 </Col>

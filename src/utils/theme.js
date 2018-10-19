@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/prefer-default-export,max-len */
 import landing from '../assets/landing.png';
 
 export const theme = {
@@ -146,15 +146,18 @@ export const theme = {
         },
         formColumn: { background: '#FFFFFF', margin: '0 auto', marginRight: 0 },
         activeColumn: {
-            textAlign: 'center', borderBottom: '1px solid #EE0C28', cursor: 'pointer', paddingRight: 0, paddingLeft: 0,
+            textAlign: 'center', display: 'block', borderBottom: '1px solid #EE0C28', cursor: 'pointer', paddingRight: 0, paddingLeft: 0, color: '#EE0C28', textDecoration: 'none',
         },
         activeSpan: (MarginTop = '5%', letSpacing = 'initial') => ({
             display: 'block', marginTop: MarginTop, color: '#EE0C28', fontSize: '14px', letterSpacing: letSpacing,
         }),
         disActiveSpan: (MarginTop = '5%', letSpacing = 'initial') => ({
-            display: 'block', marginTop: MarginTop, color: 'rgba(0, 0, 0, 0.6)', cursor: 'pointer', fontSize: '14px', letterSpacing: letSpacing,
+            // display: 'block', marginTop: MarginTop, color: 'rgba(0, 0, 0, 0.6)', cursor: 'pointer', fontSize: '14px', letterSpacing: letSpacing,
+            display: 'block', marginTop: MarginTop, cursor: 'pointer', fontSize: '14px', letterSpacing: letSpacing, textDecoration: 'none',
         }),
-        disActiveColumn: { textAlign: 'center' },
+        disActiveColumn: {
+            display: 'block', textAlign: 'center', textDecoration: 'none', color: 'rgba(0, 0, 0, 0.6)', borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
+        },
         headerRow: { height: '50px', marginBottom: '10%' },
         renderFieldButton: {
             textAlign: 'center', paddingTop: '5px', paddingBottom: '5px', cursor: 'pointer', color: '#EE0C28', display: 'block',

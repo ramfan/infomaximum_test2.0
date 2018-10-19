@@ -18,7 +18,6 @@ class GoToBack extends PureComponent {
     }
 
     render() {
-        console.log(this.props);
         return (
             <Col style={{ display: 'flex' }} onClick={this.goToBack}>
                 <Route>
@@ -27,7 +26,7 @@ class GoToBack extends PureComponent {
                             <img src={back} style={{ height: '19px' }}/>
                         </span>
                         <span style={this.props.theme.clickElement}>
-                    &nbsp;Вернуться назад
+                    &nbsp;Вернуться&nbsp;{this.props.where}
                         </span>
                     </Link>
                 </Route>

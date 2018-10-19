@@ -30,12 +30,13 @@ class Root extends Component {
                                 {/* <Route path='/createEvent' component={CreateEvent}/> */}
                                 <Layout left={
                                     <Switch>
-                                        <Route path='/createEvent' component={Nav}/>
+                                        <Route path='/event/create' component={Nav}/>
                                         <Route path='/dashSys' component={Nav}/>
+                                        <Route path='/event/profile' component={Nav}/>
                                     </Switch>
                                 } right={
                                     <Switch>
-                                        <Route path='/createEvent' component={CreateEvent}/>
+                                        <Route path='/event' component={CreateEvent}/>
                                         <Route path='/dashSys' component={System}/>
                                     </Switch>
                                 }/>

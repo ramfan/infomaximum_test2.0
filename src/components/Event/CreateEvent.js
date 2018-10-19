@@ -1,8 +1,11 @@
 import React, { PureComponent } from 'react';
 import { Row, Col } from 'react-grid-system';
 import { withTheme } from 'react-fela';
+import { Route, Switch } from 'react-router';
 import GoToBack from '../../containers/Dashboard/GoToBack';
 import CreateForm from './CreateForm';
+import Profile from './Profile';
+
 
 class CreateEvent extends PureComponent {
     render() {
@@ -10,10 +13,13 @@ class CreateEvent extends PureComponent {
             <Row style={this.props.theme.systemLayout}>
                 <Col>
                     <Row style={{ marginBottom: '5%' }}>
-                        <GoToBack/>
+                        <GoToBack where={'назад'}/>
                     </Row>
                     <Row>
-                        <CreateForm/>
+                        <Switch>
+                            <Route path={'/event/create'} component={CreateForm}/>
+                            <Route path={'/event/profile/'} component={Profile}/>
+                        </Switch>
                     </Row>
                 </Col>
             </Row>
