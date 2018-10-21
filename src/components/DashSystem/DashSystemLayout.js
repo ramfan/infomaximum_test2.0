@@ -12,14 +12,15 @@ import Thematics from './Thematics';
 
 class DashSystemLayout extends PureComponent {
     render() {
+        const { rootStyle, row, rowCard } = this.props.theme.dashBoardSystem.DashBoardSystemLayout;
         return (
-            <Col md={11}>
-                <Row style={{ marginBottom: '1%' }}>
+            <Col md={11} style={ rootStyle }>
+                <Row style={ row }>
                     <Col md={12} style={this.props.theme.paddingNull}>
                         <Event/>
                     </Col>
                 </Row>
-                <Row justify={'between'} style={{ height: '540px' }}>
+                <Row justify={'between'} style={rowCard}>
                     <EventCard
                         title={'Участники'}
                         subTitle={'за последние 30 дней'}
@@ -40,7 +41,7 @@ class DashSystemLayout extends PureComponent {
                         subTitle={'за последние 30 дней'}
                         num={'6'}
                         switcheses={<ProjectSwitches/>}
-                        detailInfo={<Thematics/>}
+                        detailInfo={<Thematics thematics={['Мобильное приложение (3)', 'Роботехника (2)', 'VR (1)']}/>}
                     />
                 </Row>
             </Col>

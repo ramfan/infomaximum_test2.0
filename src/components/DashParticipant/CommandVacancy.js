@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { PureComponent } from 'react';
 import { Row, Col } from 'react-grid-system';
 import { withTheme } from 'react-fela';
@@ -14,14 +15,14 @@ class CommandVacancy extends PureComponent {
         const avatar = this.props.avatar !== undefined ? this.props.avatar : unknown;
         return (
             <div >
-                <Col style={{ position: 'relative', height: '100%' }}>
+                <Col style={this.props.theme.dashBoardParticipant.CommandVacancy.rootStyle}>
                     <Row align={'start'}>
                         <Col md={8}>
                             <VacancyTitle title={'ИЩУТ СПЕЦИАЛИСТА'}/>
                             <VacancyDescription header={'Команда 1'} description={'Мы хотим создать сервис по записи домашних животных на стрижку'}/>
                         </Col>
-                        <Col md={4} style={{ padding: '10px' }}>
-                            <img src={avatar} style={{ width: 'inherit' }}/>
+                        <Col md={4} style={this.props.theme.dashBoardParticipant.CommandVacancy.avatar}>
+                            <img src={avatar}/>
                         </Col>
                     </Row>
                     <NewEventButton first={'ПРИСОЕДЕНИТЬСЯ'} second={'ПОДРОБНЕЕ'}/>

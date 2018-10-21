@@ -1,38 +1,32 @@
 import React, { PureComponent } from 'react';
 import { Col, Row } from 'react-grid-system';
+import { withTheme } from 'react-fela';
 
 class EventCard extends PureComponent {
     render() {
+        const {
+            rootStyle, title, counter, span, subTitle, switches,
+        } = this.props.theme.dashBoardSystem.EventCard;
         return (
-            <div style={{ width: '33%', background: 'white' }}>
-                <Row style={{ marginLeft: 0, marginRight: 0, marginTop: '1%' }}>
+            <div style={rootStyle}>
+                <Row style={title}>
                     <Col>
-                        <span style={{ fontSize: '24px' }}>{this.props.title}</span>
+                        <span style={title.font}>{this.props.title}</span>
                     </Col>
                 </Row>
-                <Row style={{ marginLeft: 0, marginRight: 0, marginTop: '1%' }}>
+                <Row style={title}>
                     <Col>
-                        <span style={{
-                            fontSize: '14px',
-                            color: 'rgba(0, 0, 0, 0.54)',
-                        }}>{this.props.subTitle}</span>
+                        <span style={subTitle}>{this.props.subTitle}</span>
                     </Col>
                 </Row>
-                <Row style={{
-                    marginLeft: 0, marginRight: 0, marginTop: '1%', padding: '20px 15px',
-                }}>
+                <Row style={counter}>
                     <Col>
-                        <span style={{
-                            fontSize: '60px',
-                            fontWeight: '100',
-                        }}>{this.props.num}</span>
+                        <span style={span}>{this.props.num}</span>
                         &nbsp;&nbsp;
                         <span>{this.props.word}</span>
                     </Col>
                 </Row>
-                <Row style={{
-                    marginLeft: 0, marginRight: 0, marginTop: '1%', display: 'block', height: '40px',
-                }}>
+                <Row style={switches}>
                     {this.props.switcheses}
                 </Row>
                 {this.props.detailInfo}
@@ -43,4 +37,4 @@ class EventCard extends PureComponent {
 }
 
 
-export default EventCard;
+export default withTheme(EventCard);

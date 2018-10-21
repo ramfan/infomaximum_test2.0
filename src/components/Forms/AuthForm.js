@@ -12,13 +12,20 @@ import password from '../../assets/password_auth.svg';
 import user from '../../assets/usernameReg.svg';
 
 class AuthForm extends PureComponent {
+    constructor(props) {
+        super(props);
+        this.path = this.props.creator ? '/dashParticipant' : '/dashSys';
+    }
+
     render() {
         const {
             handleSubmit, pristine, reset, submitting, describe,
         } = this.props;
+        const path = !this.props.isCreator ? '/dashParticipant' : '/dashSys';
+        const { rootStyle, button } = this.props.theme.AuthForm;
         return (
             <Row>
-                <Col md={12} style={{ padding: ' 0 30px 30px 30px' }}>
+                <Col md={12} style={rootStyle}>
                     <Row>
                         <Col md={12}>
                             {this.props.username
@@ -28,11 +35,11 @@ class AuthForm extends PureComponent {
                             <Field name='password' type='password' component={renderField} label='Пароль' icon={password}/>
                         </Col>
                     </Row>
-                    <Row justify={'between'} style={{ marginTop: '3%' }}>
+                    <Row justify={'between'} style={button}>
                         <Col md={3}/>
                         <Col md={6}>
                             <Route>
-                                <Link to={'/dashParticipant'} style={this.props.theme.linkStyle}>
+                                <Link to={this.path} style={this.props.theme.linkStyle}>
                                     <span style={this.props.theme.authForm.renderFieldButton()} onClick={this.handleAuth}>{describe}</span>
                                 </Link>
                             </Route>
@@ -50,4 +57,6 @@ export default reduxForm({
     validate, // <--- validation function given to redux-form
 })(connect(state => ({
     isReg: state.duckReducer.getRegisterForm,
+    creator: state.duckReducer.isCreator,
+    participant: state.duckReducer.isParticipant,
 }))(withTheme(AuthForm)));

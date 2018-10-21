@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react';
 import { Row, Col } from 'react-grid-system';
 import { Route, Switch } from 'react-router';
+import { withTheme } from 'react-fela';
 import Logo from '../../assets/Rectangle 2.png';
 import ProfileSwitches from './ProfileSwitches';
 import Detail from './Detail';
@@ -16,9 +17,10 @@ import EventPlace from './EventPlace';
 
 class Profile extends PureComponent {
     render() {
+        const { rootStyle, eventInfo, logo } = this.props.theme.dashBoardSystem.Profile;
         return (
-            <Col md={12} style={{ background: 'white', padding: '48px' }}>
-                <Row style={{ margin: 'auto' }}>
+            <Col md={12} style={rootStyle}>
+                <Row style={eventInfo}>
                     <Col md={10}>
                         <ProfileEventTitle/>
                         <ProfileEventEdit/>
@@ -27,7 +29,7 @@ class Profile extends PureComponent {
                         <EventPlace/>
                     </Col>
                     <Col md={2}>
-                        <img src={Logo} style={{ width: '100%', height: 'auto', float: 'right' }}/>
+                        <img src={Logo} style={logo}/>
                     </Col>
                 </Row>
                 <Row>
@@ -44,4 +46,4 @@ class Profile extends PureComponent {
     }
 }
 
-export default Profile;
+export default withTheme(Profile);

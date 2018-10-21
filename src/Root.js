@@ -16,10 +16,19 @@ import CreateEvent from './components/Event/CreateEvent';
 import System from './components/Dashboard/System';
 import Nav from './components/Navigate/Nav';
 import Participant from './components/Dashboard/Participant';
+import CreateCommand from './components/Command/Command';
 
 class Root extends Component {
     render() {
         const renderer = createRenderer();
+        const navProp = {
+            participant: {
+                path: '/dashParticipant',
+                description: 'Создать ...',
+            },
+        };
+        const WrappedNavParticipant = props => (<Nav {...props} path={'/command/create'} description={'Создать ...'}/>);
+        const WrappedNavCreate = props => (<Nav {...props} path={'/event/create'} description={'Создать событие'}/>);
         return (
             <Provider store={store}>
                 <FellaProvider renderer={renderer}>
@@ -31,16 +40,18 @@ class Root extends Component {
                                 {/* <Route path='/createEvent' component={CreateEvent}/> */}
                                 <Layout left={
                                     <Switch>
-                                        <Route path='/event/create' component={Nav}/>
-                                        <Route path='/dashSys' component={Nav}/>
-                                        <Route path='/event/profile' component={Nav}/>
-                                        <Route path='/dashParticipant' component={Nav}/>
+                                        <Route path='/event/create' component={WrappedNavCreate}/>
+                                        <Route path='/dashSys' component={WrappedNavCreate}/>
+                                        <Route path='/event/profile' component={WrappedNavCreate}/>
+                                        <Route path='/dashParticipant' component={WrappedNavParticipant}/>
+                                        <Route path='/command/create' component={WrappedNavParticipant}/>
                                     </Switch>
                                 } right={
                                     <Switch>
                                         <Route path='/event' component={CreateEvent}/>
                                         <Route path='/dashSys' component={System}/>
                                         <Route path='/dashParticipant' component={Participant}/>
+                                        <Route path='/command/create' component={CreateCommand}/>
                                     </Switch>
                                 }/>
                             </Switch>

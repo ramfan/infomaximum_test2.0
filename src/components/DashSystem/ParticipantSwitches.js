@@ -8,7 +8,7 @@ class ParticipantSwitches extends PureComponent {
             activeColumn, activeSpan, disActiveSpan, disActiveColumn,
         } = this.props.theme.authForm;
         return (
-            <Col style={{ color: 'green', height: '40px' }}>
+            <Col>
                 <Row justify={'center'}>
                     <Col md={4} style={activeColumn}>
                         <span style={activeSpan('0')}>ПОЛ</span>

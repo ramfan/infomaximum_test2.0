@@ -1,18 +1,54 @@
+/* eslint-disable max-len */
 import React, { PureComponent } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { withTheme } from 'react-fela';
 import { Row, Col } from 'react-grid-system';
 import { Link, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { validate } from '../../utils/validation';
 import { renderField } from '../Auth/FormField';
 import shape from '../../assets/Shape.svg';
+import CreateButton from '../../components/CreateButton';
+import TextFields from '../../components/Forms/TextFields';
+import { actionCreators } from '../../duckStore';
 
 class EventForm extends PureComponent {
+    constructor(props) {
+        super(props);
+        this.handleAddNewSocialField = this.handleAddNewSocialField.bind(this);
+        this.handleAddNewMentorField = this.handleAddNewMentorField.bind(this);
+    }
+
+    handleAddNewSocialField() {
+        this.props.addSocial();
+    }
+
+    handleAddNewMentorField() {
+        this.props.addMentor();
+    }
+
     render() {
+        /* TODO  разбить на мелкие компоненты */
+        const fieldsSocial = [];
+        for (let i = 0; i < this.props.countFieldsSocial; i += 1) {
+            fieldsSocial.push(
+                <Col md={8}>
+                    <Field name={`social${i}`} type='text' component={renderField} label='Ссылка на соц. сеть'/>
+                </Col>,
+            );
+        }
+        const mentors = [];
+        for (let i = 0; i < this.props.countFieldsMentor; i += 1) {
+            mentors.push(
+                <Col md={8}>
+                    <Field name={`mentor${i}`} type='text' component={renderField} label='ФИО ментора / эксперта'/>
+                </Col>,
+            );
+        }
         return (
             <Row>
-                <Col md={12}>
-                    <Field name='text1' type='text' component={renderField} label='Введите название события'/>
+                <Col>
+                    <TextFields name={'eventName'} type={'text'} label={'Введите название события'}/>
                 </Col>
                 <Col md={12}>
                     <Row justify={'start'}>
@@ -29,72 +65,25 @@ class EventForm extends PureComponent {
                             <Field name='text5' type='time' component={renderField} label=''/>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col md={12}>
-                            <Field name='text6' type='text' component={renderField} label='Место проведения'/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md={12}>
-                            <Field name='text7' type='text' component={renderField} label='URL события аватара'/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md={12}>
-                            <Field name='text8' type='text' component={renderField} label='Описание события'/>
-                        </Col>
-                    </Row>
+                    <TextFields name={'placeEvent'} type={'text'} label={'Место проведения события'}/>
+                    <TextFields name={'avatarURL'} type={'text'} label={'URL аватара события'}/>
+                    <TextFields name={'descriptionEvent'} type={'text'} label={'Описание события'}/>
                     <Row align={'center'}>
-                        <Col md={8}>
-                            <Field name='text9' type='text' component={renderField} label='Ссылка на соц. сеть'/>
-                        </Col>
-                        <Col md={3} style={{ fontSize: '14px', color: 'rgba(0, 0, 0, 0.54)' }}>
-                            <span style={{ cursor: 'pointer' }}><img src={shape} /></span>
-                            <span style={{ cursor: 'pointer' }}> &nbsp; ДОБАВИТЬ СОЦ. СЕТЬ</span>
+                        {fieldsSocial}
+                        <Col md={3} style={this.props.theme.EventForm.col}>
+                            <span style={this.props.theme.clickElement} onClick={this.handleAddNewSocialField}><img src={shape} /></span>
+                            <span style={this.props.theme.clickElement} onClick={this.handleAddNewSocialField}> &nbsp; ДОБАВИТЬ СОЦ. СЕТЬ</span>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col md={12}>
-                            <Field name='text10' type='text' component={renderField} label='Призы'/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md={12}>
-                            <Field name='text11' type='text' component={renderField} label='Теги для поиска'/>
-                        </Col>
-                    </Row>
+                    <TextFields name={'prise'} type={'text'} label={'Призы'}/>
                     <Row align={'center'}>
-                        <Col md={8}>
-                            <Field name='text12' type='text' component={renderField} label='ФИО ментора / эксперта'/>
-                        </Col>
+                        {mentors}
                         <Col md={4} style={{ fontSize: '14px', color: 'rgba(0, 0, 0, 0.54)' }}>
-                            <span style={{ cursor: 'pointer' }}><img src={shape} /></span>
-                            <span style={{ cursor: 'pointer' }}> &nbsp; ДОБАВИТЬ МЕНТОРА / ЭКСПЕРТА</span>
+                            <span style={this.props.theme.clickElement} onClick={this.handleAddNewMentorField}><img src={shape} /></span>
+                            <span style={this.props.theme.clickElement} onClick={this.handleAddNewMentorField}> &nbsp; ДОБАВИТЬ МЕНТОРА / ЭКСПЕРТА</span>
                         </Col>
                     </Row>
-                    <Row justify={'end'} style={{ marginTop: '2%' }}>
-                        <Col md={2}>
-                            <span style={{
-                                letterSpacing: '0.75px',
-                                fontSize: '14px',
-                                color: '#EE0C28',
-                            }}>ОТМЕНА</span>
-                        </Col>
-                        <Col md={2}>
-                            <Route>
-                                <Link to={'/event/profile/detail'} style={{ textDecoration: 'none' }}>
-                                    <span style={{
-                                        fontSize: '14px',
-                                        letterSpacing: '0.75px',
-                                        background: '#EE0C28',
-                                        color: 'white',
-                                        padding: '10px 30px 12px 30px',
-                                        borderRadius: '4px',
-                                    }}>СОЗДАТЬ</span>
-                                </Link>
-                            </Route>
-                        </Col>
-                    </Row>
+                    <CreateButton to_path={'/event/profile/detail'}/>
                 </Col>
             </Row>
         );
@@ -102,6 +91,14 @@ class EventForm extends PureComponent {
 }
 // eslint-disable-next-line no-class-assign
 EventForm = withTheme(EventForm);
+const { addSocial, addMentor } = actionCreators;
+
+// eslint-disable-next-line no-class-assign
+EventForm = connect(state => ({
+    countFieldsSocial: state.duckReducer.countSocials,
+    countFieldsMentor: state.duckReducer.countMentors,
+
+}), { addSocial, addMentor })(EventForm);
 
 export default reduxForm({
     form: 'EventForm', // a unique identifier for this form

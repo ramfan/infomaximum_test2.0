@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 class RowDescription extends PureComponent {
     render() {
         return (
-            <Row style={{ margin: 0, paddingBottom: '16px' }}>
+            <Row style={this.props.theme.dashBoardParticipant.RowDescription}>
                 {this.props.children}
             </Row>
         );

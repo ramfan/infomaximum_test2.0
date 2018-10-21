@@ -12,7 +12,7 @@ class ProjectVacancy extends PureComponent {
         const participants = [];
         for (let i = 0; i < names.length; i += 1) {
             participants.push(
-                <div style={{ height: '30px', marginTop: '5%', marginRight: '3%' }}>
+                <div key={i} style={{ height: '30px', marginTop: '5%', marginRight: '3%' }}>
                     <span style={{
                         color: 'black',
                         padding: '12px 30px 12px 30px',

@@ -1,12 +1,13 @@
 import React, { PureComponent } from 'react';
 import { Col, Row } from 'react-grid-system';
+import { withTheme } from 'react-fela';
 import Insriptions from '../Insriptions';
 import Descriptions from '../Descriptions';
 
 class DateOfEvent extends PureComponent {
     render() {
         return (
-            <Row style={{ marginTop: '5%' }}>
+            <Row style={this.props.theme.dashBoardSystem.DateOfEvent}>
                 <Col md={3}>
                     <Insriptions inscription={'Дата начала'}/>
                     <Descriptions description={'3 сентября 2018 года'}/>
@@ -28,4 +29,4 @@ class DateOfEvent extends PureComponent {
     }
 }
 
-export default DateOfEvent;
+export default withTheme(DateOfEvent);

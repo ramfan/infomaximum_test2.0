@@ -17,15 +17,13 @@ class ProfileSwitches extends Component {
         const switches = [];
         for (let i = 0; i < 4; i += 1) {
             switches.push(
-                <Col style={this.props.theme.paddingNull}>
+                <Col key={i} style={this.props.theme.paddingNull}>
                     <CustomLink to_path={paths[i]} itemName={labels[i]}/>
                 </Col>,
             );
         }
         return (
-            <Col style={{
-                padding: '30px', marginTop: '1%',
-            }}>
+            <Col style={this.props.theme.dashBoardSystem.ProfileSwitches}>
                 <Row>
                     {
                         switches

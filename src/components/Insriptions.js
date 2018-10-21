@@ -1,14 +1,13 @@
 import React, { PureComponent } from 'react';
+import { withTheme } from 'react-fela';
 
 
 class Insriptions extends PureComponent {
     render() {
         return (
-            <span style={{
-                display: 'block', color: '#AAAAAA', fontSize: '11px',
-            }}>{this.props.inscription}</span>
+            <span style={this.props.theme.Inscription}>{this.props.inscription}</span>
         );
     }
 }
 
-export default Insriptions;
+export default withTheme(Insriptions);

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Row, Col } from 'react-grid-system';
+import { Link } from 'react-router-dom';
 import NavItem from './NavItem';
 import total from '../../assets/MenuItemPublicData.svg';
 import MyEvents from '../../assets/MyEvents.svg';
@@ -15,7 +16,9 @@ class GroupNavItems extends PureComponent {
                 <NavItem Icon={MyEvents} description={'Мои события'} exit={false}/>
                 <NavItem Icon={SearchEvent} description={'Поиск сбытия'} exit={false}/>
                 <NavItem Icon={ProfileSettings} description={'Настройки профиля'} exit={false}/>
-                <NavItem Icon={Exit} description={'Выход'} exit={true}/>
+                <Link to={'/'} style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.87)' }}>
+                    <NavItem Icon={Exit} description={'Выход'} exit={true}/>
+                </Link>
             </Row>
         );
     }

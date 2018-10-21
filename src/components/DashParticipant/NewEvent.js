@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { PureComponent } from 'react';
 import { Row, Col } from 'react-grid-system';
 import { withTheme } from 'react-fela';
@@ -14,14 +15,14 @@ class NewEvent extends PureComponent {
     render() {
         const avatar = this.props.avatar !== undefined ? this.props.avatar : unknownPng;
         return (
-            <div style={{ position: 'relative', height: '100%' }}>
+            <div style={this.props.theme.dashBoardParticipant.NewEvent.rootStyle}>
                 <Row>
                     <Col>
-                        <img src={avatar} style={{ width: 'inherit' }}/>
+                        <img src={avatar} style={this.props.theme.dashBoardParticipant.NewEvent.avatar}/>
                     </Col>
                 </Row>
                 {this.props.children}
-                <div style={{ padding: '16px' }}>
+                <div style={this.props.theme.dashBoardParticipant.NewEvent.buttonBlock}>
                     <NewEventButton first={'ПРИНЯТЬ УЧАСТИЕ'} second={'ПОДРОБНЕЕ'}/>
                 </div>
             </div>

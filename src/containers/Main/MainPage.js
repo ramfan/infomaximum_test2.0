@@ -10,7 +10,7 @@ import Auth from '../Auth/Auth';
 class MainPage extends PureComponent {
     render() {
         return (
-            <Row style={{ marginRight: 0, marginLeft: 0 }}>
+            <Row style={Object.assign(this.props.theme.marginNull, this.props.theme.paddingNull)}>
                 { this.props.toggle
                     ? <Col style={this.props.theme.paddingNull}>
                         <Auth/>
@@ -33,9 +33,6 @@ class MainPage extends PureComponent {
 }
 // eslint-disable-next-line no-class-assign
 MainPage = withTheme(MainPage);
-export default connect((state) => {
-    console.log(state);
-    return {
-        toggle: state.duckReducer.showPopup,
-    };
-})(MainPage);
+export default connect(state => ({
+    toggle: state.duckReducer.showPopup,
+}))(MainPage);

@@ -1,18 +1,16 @@
 /* eslint-disable max-len */
 import React, { PureComponent } from 'react';
 import { Col, Row } from 'react-grid-system';
+import { withTheme } from 'react-fela';
 
 
 class ProfileEventDiscription extends PureComponent {
-    static defaultProps = {};
-
-    static propTypes = {};
-
     render() {
+        const { rootStyle, description } = this.props.theme.dashBoardSystem.ProfileEventDescription;
         return (
-            <Row style={{ marginTop: '5%' }}>
+            <Row style={rootStyle}>
                 <Col>
-                    <span style={{ fontSize: '13px', color: 'rgba(0, 0, 0, 0.54)' }}>
+                    <span style={description}>
 
                                     48 часов беспрерывного кода, крутые менторы, эксперты ведущих компаний города, комфортные условия и отличная компания!
                     </span>
@@ -22,4 +20,4 @@ class ProfileEventDiscription extends PureComponent {
     }
 }
 
-export default ProfileEventDiscription;
+export default withTheme(ProfileEventDiscription);

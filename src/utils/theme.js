@@ -7,6 +7,7 @@ export const theme = {
         textDecoration: 'none',
         color: '#000000',
     },
+    marginNull: { margin: 0 },
     landingPage: {
 
         background: '#000000',
@@ -82,7 +83,7 @@ export const theme = {
             background: 'linear-gradient(to left, rgba(255, 147, 21, 0.5) 0%, rgba(238, 12, 40, 0.5) 100%)',
             // fontSize: '-webkit-xxx-large',
             fontSize: '5em',
-            '-webkit-background-clip': 'text',
+            WebkitBackgroundClip: 'text',
             color: 'transparent',
             // minWidth: '936px'
         },
@@ -112,7 +113,7 @@ export const theme = {
             logoColor: {
                 background: 'linear-gradient(to left, rgba(255, 147, 21, 1) 0%, rgba(238, 12, 40, 1) 100%)',
                 // fontSize: '-webkit-xxx-large',
-                '-webkit-background-clip': 'text',
+                WebkitBackgroundClip: 'text',
                 color: 'transparent',
             },
             info: {
@@ -179,7 +180,7 @@ export const theme = {
         textDecoration: 'none',
     },
     systemLayout: {
-        background: 'rgba(229, 229, 229, 0.5)', padding: '44px 100px 100px 100px',
+        background: 'rgba(229, 229, 229, 0.5)', padding: '44px 100px 100px 100px', height: '100%',
     },
     event: {
         root: { margin: '0 auto', background: 'white' },
@@ -192,4 +193,187 @@ export const theme = {
     display: ({ disPlay = 'block' }) => ({
         display: disPlay,
     }),
+    dashBoardParticipant: {
+        Command: {
+            marginBottom: '5%',
+        },
+        CreateCommand: {
+            col: {
+                background: 'white',
+                padding: '20px',
+            },
+            row: { margin: 'auto' },
+            span: { fontSize: '34px', letterSpacing: '0.25px' },
+        },
+        ParticipantProfile: {
+            profile: { margin: '1%', boxShadow: 'rgba(0, 0, 0, 0.8) 2px 3px 4px -1px' },
+        },
+        EventsRow: { margin: '1%' },
+        EventsColumns: {
+            width: '33%', background: 'white', boxShadow: 'rgba(0, 0, 0, 0.8) 2px 3px 4px -1px', position: 'relative', overflow: 'hidden',
+        },
+        MiddleColumn: {
+            TopColumn: {
+                margin: ' 0% 0 0% 0%', background: 'white', top: 0, height: '49%', position: 'absolute',
+            },
+            BottomColumn: {
+                margin: ' 0% 0 0% 0%', background: 'white', bottom: 0, height: '49%', position: 'absolute',
+            },
+        },
+        AdditionalDescription: {
+            width: '100%',
+        },
+        CommandVacancy: {
+            rootStyle: { position: 'relative', height: '100%' },
+            avatar: { padding: '10px' },
+        },
+        NewEvent: {
+            rootStyle: { position: 'relative', height: '100%' },
+            avatar: { width: 'inherit' },
+            buttonBlock: { padding: '16px' },
+        },
+        NewEventButton: {
+            position: 'absolute', bottom: 0, width: '100%', marginBottom: '3%',
+        },
+        RowDescription: { margin: 0, paddingBottom: '16px' },
+        VacancyDescription: {
+            rootStyle: { paddingBottom: '86px' },
+            row: { margin: 0, marginTop: '5%', padding: 0 },
+        },
+        VacancyTitle: {
+            rootStyle: { margin: 0, marginTop: '5%', padding: 0 },
+            span: { fontSize: '10px', letterSpacing: '1.5px' },
+        },
+        YourCard: {
+            rootStyle: { background: 'white', padding: '16px 30px 16px 30px' },
+            row: { margin: '1%' },
+            title: { fontSize: '10px', letterSpacing: '1.5px' },
+            name: { fontSize: '24px' },
+            icon: { width: '50%', float: 'right' },
+        },
+    },
+    dashBoardSystem: {
+        DashBoardSystemLayout: {
+            rootStyle: { height: '100vh' },
+            row: { marginBottom: '1%' },
+            rowCard: { height: '540px' },
+        },
+        EventCard: {
+            rootStyle: { width: '33%', background: 'white' },
+            title: {
+                marginLeft: 0,
+                marginRight: 0,
+                marginTop: '1%',
+                font: {
+                    fontSize: '24px',
+                },
+            },
+            counter: {
+                marginLeft: 0, marginRight: 0, marginTop: '1%', padding: '20px 15px',
+            },
+            subTitle: {
+                fontSize: '14px',
+                color: 'rgba(0, 0, 0, 0.54)',
+            },
+            span: {
+                fontSize: '60px',
+                fontWeight: '100',
+            },
+            switches: {
+                marginLeft: 0, marginRight: 0, marginTop: '1%', display: 'block', height: '40px',
+            },
+        },
+        Stats: {
+            rootStyle: { display: 'block', margin: '0 auto', color: 'black' },
+            dot: Background => ({
+                width: '30px', height: '30px', display: 'block', borderRadius: '50%', background: Background,
+            }),
+            statItem: {
+                display: 'table', margin: '0 auto', color: 'rgba(0, 0, 0, 0.54)', padding: '12px',
+            },
+        },
+        Thematics: {
+            margin: '1%',
+        },
+        CreateEvent: { marginBottom: '5%' },
+        CreateForm: {
+            rootStyle: { background: 'white', padding: '20px' },
+            row: { margin: 'auto' },
+        },
+        DateOfEvent: { marginTop: '5%' },
+        Detail: {
+            row: { display: 'block', margin: '1%' },
+            expert: { padding: '0 0 0 15px' },
+            social: { fontSize: '14px', color: '#EE0C28' },
+        },
+        EventPlace: { marginTop: '5%' },
+        Profile: {
+            rootStyle: { background: 'white', padding: '48px' },
+            eventInfo: { margin: 'auto' },
+            logo: { width: '100%', height: 'auto', float: 'right' },
+        },
+        ProfileEventDescription: {
+            rootStyle: { marginTop: '5%' },
+            description: { fontSize: '13px', color: 'rgba(0, 0, 0, 0.54)' },
+        },
+        ProfileEventEdit: {
+            rootStyle: { marginTop: '2%' },
+            img: { height: '14px' },
+            edit: {
+                fontSize: '14px', letterSpacing: '0.75px', color: '#EE0C28', paddingLeft: 'inherit',
+            },
+        },
+        ProfileEventTitle: { fontSize: '34px', letterSpacing: '0.25px' },
+        ProfileSwitches: {
+            padding: '30px', marginTop: '1%',
+        },
+    },
+    AuthForm: {
+        rootStyle: { padding: ' 0 30px 30px 30px' },
+        button: { marginTop: '3%' },
+        role: { marginBottom: '3%' },
+    },
+    Navigate: {
+        exit: { marginTop: '25%', marginBottom: '5%', padding: '10px' },
+        unExit: { marginTop: '5%', marginBottom: '5%', padding: '10px' },
+    },
+    CreateButton: {
+        rootStyle: { marginTop: '2%' },
+        create: {
+            fontSize: '14px',
+            letterSpacing: '0.75px',
+            background: '#EE0C28',
+            color: 'white',
+            padding: '10px 30px 12px 30px',
+            borderRadius: '4px',
+        },
+        cancel: {
+            letterSpacing: '0.75px',
+            fontSize: '14px',
+            color: '#EE0C28',
+        },
+    },
+    Description: { fontSize: '14px' },
+    Inscription: {
+        display: 'block', color: '#AAAAAA', fontSize: '11px',
+    },
+    Subscription: {
+        display: 'flex', color: '#AAAAAA', fontSize: '14px',
+    },
+    FormField: {
+        width: '100%',
+        height: '30px',
+        border: 'none',
+        borderBottom: '1px solid #D2D2D2',
+        marginTop: '2%',
+        marginBottom: '2%',
+    },
+    CommandForm: { fontSize: '14px', color: 'rgba(0, 0, 0, 0.54)' },
+    GoBack: {
+        rootStyle: { display: 'flex' },
+        img: { height: '19px' },
+    },
+    EventForm: {
+        col: { fontSize: '14px', color: 'rgba(0, 0, 0, 0.54)' }
+    },
 };

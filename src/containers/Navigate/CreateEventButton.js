@@ -22,7 +22,7 @@ class CreateEventButton extends PureComponent {
         return (
             <Col style={{ display: 'flex' }} onClick={this.handlerCreateEvent}>
                 <Route>
-                    <Link to={'/event/create'}>
+                    <Link to={this.props.path}>
                         <CustomButton
                             color={'#E5001C'}
                             margin={'0 auto'}
@@ -34,7 +34,7 @@ class CreateEventButton extends PureComponent {
                             paddingRight={'35px'}
                             fontSize={'12px'}
                         >
-                            + &nbsp; Создать событие
+                            + &nbsp; {this.props.description}
                         </CustomButton>
                     </Link>
                 </Route>

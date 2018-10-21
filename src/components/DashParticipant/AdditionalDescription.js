@@ -7,10 +7,10 @@ import Subscriptions from '../Subscriptions';
 class AdditionalDescription extends PureComponent {
     render() {
         return (
-            <div style={{ width: '100%' }}>
+            <div style={this.props.theme.dashBoardParticipant.AdditionalDescription}>
                 {
                     this.props.icon !== undefined
-                        ? <Row align={'center'} style={{ margin: 0 }}>
+                        ? <Row align={'center'} style={this.props.theme.marginNull}>
                             <Col md={1}>
                                 <img src={this.props.icon} alt=''/>
                             </Col>
@@ -18,7 +18,7 @@ class AdditionalDescription extends PureComponent {
                                 <span>{this.props.date}</span>
                             </Col>
                         </Row>
-                        : <Row align={'center'} style={{ margin: 0 }}>
+                        : <Row align={'center'} style={this.props.theme.marginNull}>
                             <Col>
                                 <span>{this.props.text}</span>
                             </Col>

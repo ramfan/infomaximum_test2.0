@@ -6,22 +6,25 @@ import Button from '../Button';
 
 class YourCard extends PureComponent {
     render() {
+        const {
+            rootStyle, row, title, name, icon,
+        } = this.props.theme.dashBoardParticipant.YourCard;
         return (
-            <Col style={{ background: 'white', padding: '16px 30px 16px 30px' }}>
+            <Col style={rootStyle}>
                 <Row>
                     <Col md={10}>
-                        <Row style={{ margin: '1%' }}>
-                            <span style={{ fontSize: '10px', letterSpacing: '1.5px' }}>{this.props.title}</span>
+                        <Row style={row}>
+                            <span style={title}>{this.props.title}</span>
                         </Row>
-                        <Row style={{ margin: '1%' }}>
-                            <span style={{ fontSize: '24px' }}>{this.props.name}</span>
+                        <Row style={row}>
+                            <span style={name}>{this.props.name}</span>
                         </Row>
-                        <Row style={{ margin: '1%' }}>
+                        <Row style={row}>
                             <Subscriptions subscription={this.props.additional}/>
                         </Row>
                     </Col>
                     <Col md={2}>
-                        <img src={this.props.icon} style={{ width: '50%', float: 'right' }}/>
+                        <img src={this.props.icon} style={icon}/>
                     </Col>
                 </Row>
                 <Row justify={'start'}>

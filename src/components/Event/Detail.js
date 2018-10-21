@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Row, Col } from 'react-grid-system';
+import { withTheme } from 'react-fela';
 import Insriptions from '../Insriptions';
 import Descriptions from '../Descriptions';
 
@@ -14,25 +15,26 @@ class Detail extends PureComponent {
                 </li>,
             );
         }
+        const { row, expert, social } = this.props.theme.dashBoardSystem.Detail;
         return (
             <Col>
-                <Row style={{ display: 'block', margin: '1%' }}>
+                <Row style={row}>
                     <Insriptions inscription={'Призы'}/>
                     <Descriptions description={'1 место - MacBook Pro 17, 2 место - iPad Pro, 3 место - iPone Xs Max'}/>
                 </Row>
-                <Row style={{ display: 'block', margin: '1%' }}>
+                <Row style={row}>
                     <Insriptions inscription={'Эксперты'}/>
-                    <ol style={{ padding: '0 0 0 15px' }}>
+                    <ol style={expert}>
                         {expertList}
                     </ol>
                 </Row>
-                <Row style={{ display: 'block', margin: '1%' }}>
+                <Row style={row}>
                     <Insriptions inscription={'Ссылка на соц. сети'}/>
-                    <span style={{ fontSize: '14px', color: '#EE0C28' }}>vk.com/event169897816</span>
+                    <span style={social}>vk.com/event169897816</span>
                 </Row>
             </Col>
         );
     }
 }
 
-export default Detail;
+export default withTheme(Detail);

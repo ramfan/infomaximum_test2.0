@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { PureComponent } from 'react';
 import { Col, Row } from 'react-grid-system';
 import { withTheme } from 'react-fela';
@@ -29,7 +30,7 @@ class Nav extends PureComponent {
                         </Col>
                     </Row>
                     <Row style={this.props.theme.display('contents')}>
-                        <CreateEventButton/>
+                        <CreateEventButton path={this.props.path} description={this.props.description}/>
                     </Row>
 
                     <Row >

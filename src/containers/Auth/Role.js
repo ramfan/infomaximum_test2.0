@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Col, Row } from 'react-grid-system';
 import checked from '../../assets/ic_radio_button_checked_24px.svg';
 import unchecked from '../../assets/radio_button_unchecked_24px.svg';
+import { actionCreators } from '../../duckStore';
 
 
 class Role extends PureComponent {
@@ -12,33 +13,23 @@ class Role extends PureComponent {
         super(props);
         this.handleParticipate = this.handleParticipate.bind(this);
         this.handleCreate = this.handleCreate.bind(this);
-        this.state = {
-            participate: true,
-            create: false,
-        };
     }
 
     handleParticipate() {
-        this.setState({
-            participate: true,
-            create: false,
-        });
+        this.props.asParticipant();
     }
 
     handleCreate() {
-        this.setState({
-            participate: false,
-            create: true,
-        });
+        this.props.asCreator();
     }
 
     render() {
-        const participant = this.state.participate ? checked : unchecked;
-        const creator = this.state.create ? checked : unchecked;
+        const participant = !this.props.isCreator ? checked : unchecked;
+        const creator = this.props.isCreator ? checked : unchecked;
         return (
-            <Col md={7}>
-                <Row>
-                    <Col md={12}>
+            <Col md={7} style={this.props.theme.AuthForm.role}>
+                <Row >
+                    <Col md={12} style={this.props.theme.AuthForm.role}>
                         <Row>
                             <Col md={1} >
                                 <img src={participant} onClick={this.handleParticipate} style={this.props.theme.clickElement} />
@@ -48,7 +39,7 @@ class Role extends PureComponent {
                             </Col>
                         </Row>
                     </Col>
-                    <Col md={12}>
+                    <Col md={12} style={this.props.theme.AuthForm.role}>
                         <Row>
                             <Col md={1} >
                                 <img src={creator} onClick={this.handleCreate} style={this.props.theme.clickElement} />
@@ -65,5 +56,7 @@ class Role extends PureComponent {
 }
 // eslint-disable-next-line no-class-assign
 Role = withTheme(Role);
-
-export default connect(null, null)(Role);
+const { asCreator, asParticipant } = actionCreators;
+export default connect(state => ({
+    isCreator: state.duckReducer.isCreator,
+}), { asCreator, asParticipant })(Role);

@@ -1,4 +1,4 @@
-/* eslint-disable no-dupe-keys */
+/* eslint-disable no-dupe-keys,max-len */
 import React, { PureComponent } from 'react';
 import { Col, Row } from 'react-grid-system';
 import { withTheme } from 'react-fela';
@@ -22,21 +22,21 @@ class Participant extends PureComponent {
         return (
             <Row style={this.props.theme.systemLayout}>
                 <Col md={12} >
-                    <Row style={{ margin: '1%', boxShadow: 'rgba(0, 0, 0, 0.8) 2px 3px 4px -1px' }}>
+                    <Row style={this.props.theme.dashBoardParticipant.ParticipantProfile.profile}>
                         <YourCard
                             title={'ВАШ ПРОФИЛЬ'}
                             name={'Username Петрович'}
                             additional={'Основные навыки:  UX дизайн, CRM системы, создание логотипов'}
                             icon={username}/>
                     </Row>
-                    <Row style={{ margin: '1%', boxShadow: 'rgba(0, 0, 0, 0.8) 2px 3px 4px -1px' }}>
+                    <Row style={this.props.theme.dashBoardParticipant.ParticipantProfile.profile}>
                         <YourCard
                             title={'ВАША КОМАНДА'}
                             name={'Боевые чебурашки'}
                             additional={'Иванов Сргей, Петров Петр, Сергеев Сергей'}
                             icon={team}/>
                     </Row>
-                    <Row style={{ margin: '1%', boxShadow: 'rgba(0, 0, 0, 0.8) 2px 3px 4px -1px' }}>
+                    <Row style={this.props.theme.dashBoardParticipant.ParticipantProfile.profile}>
                         <YourCard
                             title={'ВАШ ПРОЕКТ'}
                             name={'Сервис AdminEventDay '}
@@ -44,9 +44,9 @@ class Participant extends PureComponent {
                             icon={ourProject}/>
                     </Row>
 
-                    <Row justify={'between'} style={{ margin: '1%' }}>
+                    <Row justify={'between'} style={this.props.theme.dashBoardParticipant.EventsRow}>
 
-                        <div style={{ width: '33%', background: 'white', boxShadow: 'rgba(0, 0, 0, 0.8) 2px 3px 4px -1px' }}>
+                        <div style={this.props.theme.dashBoardParticipant.EventsColumns}>
 
                             <NewEvent
                                 avatar={hackathon}
@@ -56,22 +56,18 @@ class Participant extends PureComponent {
                         </div>
 
                         <div style={{ width: '33%', position: 'relative', boxShadow: 'rgba(0, 0, 0, 0.8) 2px 3px 4px -1px' }}>
-                            <Row style={{
-                                margin: ' 0% 0 0% 0%', background: 'white', top: 0, height: '49%', position: 'absolute',
-                            }}>
+                            <Row style={this.props.theme.dashBoardParticipant.MiddleColumn.TopColumn}>
                                 <CommandVacancy/>
                             </Row>
 
-                            <Row style={{
-                                margin: ' 0% 0 0% 0%', background: 'white', bottom: 0, height: '49%', position: 'absolute',
-                            }}>
+                            <Row style={this.props.theme.dashBoardParticipant.MiddleColumn.BottomColumn}>
                                 <CommandVacancy/>
                             </Row>
 
                         </div>
-                        <div style={{
-                            width: '33%', background: 'white', boxShadow: 'rgba(0, 0, 0, 0.8) 2px 3px 4px -1px', overflow: 'hidden',
-                        }}>
+                        <div style={
+                            this.props.theme.dashBoardParticipant.EventsColumns
+                        }>
                             <NewEvent
                                 children={<ProjectVacancy/>}
                             />

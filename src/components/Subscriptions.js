@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
+import { withTheme } from 'react-fela';
 
 class Subscriptions extends PureComponent {
     render() {
         return (
-            <span style={{
-                display: 'flex', color: '#AAAAAA', fontSize: '14px',
-            }}>{this.props.subscription}</span>);
+            <span style={this.props.theme.Subscription}>{this.props.subscription}</span>);
     }
 }
 
-export default Subscriptions;
+export default withTheme(Subscriptions);

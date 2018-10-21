@@ -7,14 +7,14 @@ import Subscriptions from '../Subscriptions';
 class VacancyDescription extends PureComponent {
     render() {
         return (
-            <div style={{ paddingBottom: '86px' }}>
-                <Row style={{ margin: 0, marginTop: '5%', padding: 0 }}>
-                    <Col style={{ padding: 0 }}>
+            <div style={this.props.theme.dashBoardParticipant.VacancyDescription.rootStyle}>
+                <Row style={this.props.theme.dashBoardParticipant.VacancyDescription.row}>
+                    <Col style={this.props.theme.paddingNull}>
                         <span style={{ fontSize: '24px' }}>{this.props.header}</span>
                     </Col>
                 </Row>
-                <Row style={{ margin: 0, marginTop: '5%', padding: 0 }}>
-                    <Col style={{ padding: 0 }}>
+                <Row style={this.props.theme.dashBoardParticipant.VacancyDescription.row}>
+                    <Col style={this.props.theme.paddingNull}>
                         <Subscriptions subscription={this.props.description}/>
                     </Col>
                 </Row>

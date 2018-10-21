@@ -16,7 +16,7 @@ class DashBoardLayout extends PureComponent {
             content = <CreateEvent/>;
         }
         return (
-            <Row style={{ marginRight: 0 }}>
+            <Row style={this.props.theme.marginNull}>
                 <Col md={12} style={this.props.theme.paddingNull}>
                     <Layout
                         left={<Nav/>}

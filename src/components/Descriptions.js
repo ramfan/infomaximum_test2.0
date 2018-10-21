@@ -1,12 +1,13 @@
 import React, { PureComponent } from 'react';
+import { withTheme } from 'react-fela';
 
 
 class Descriptions extends PureComponent {
     render() {
         return (
-            <span style={{ fontSize: '14px' }}>{this.props.description}</span>
+            <span style={this.props.theme.Description}>{this.props.description}</span>
         );
     }
 }
 
-export default Descriptions;
+export default withTheme(Descriptions);
