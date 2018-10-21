@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { PureComponent } from 'react';
 import { Row, Col } from 'react-grid-system';
 import { withTheme } from 'react-fela';
@@ -12,13 +13,8 @@ class ProjectVacancy extends PureComponent {
         const participants = [];
         for (let i = 0; i < names.length; i += 1) {
             participants.push(
-                <div key={i} style={{ height: '30px', marginTop: '5%', marginRight: '3%' }}>
-                    <span style={{
-                        color: 'black',
-                        padding: '12px 30px 12px 30px',
-                        background: 'rgba(0, 0, 0, 0.12)',
-                        borderRadius: '16px',
-                    }}>{names[i]}</span>
+                <div key={i} style={this.props.theme.dashBoardParticipant.projectVacancy.wrap}>
+                    <span style={this.props.theme.dashBoardParticipant.projectVacancy}>{names[i]}</span>
                 </div>,
             );
         }

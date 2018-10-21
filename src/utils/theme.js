@@ -85,7 +85,7 @@ export const theme = {
             fontSize: '5em',
             WebkitBackgroundClip: 'text',
             color: 'transparent',
-            // minWidth: '936px'
+            wrap: { width: '100%' },
         },
         devCard: {
             rootStyle: { padding: '40px' },
@@ -210,7 +210,12 @@ export const theme = {
         },
         EventsRow: { margin: '1%' },
         EventsColumns: {
-            width: '33%', background: 'white', boxShadow: 'rgba(0, 0, 0, 0.8) 2px 3px 4px -1px', position: 'relative', overflow: 'hidden',
+            width: '33%',
+            background: 'white',
+            boxShadow: 'rgba(0, 0, 0, 0.8) 2px 3px 4px -1px',
+            position: 'relative',
+            overflow: 'hidden',
+            second: { width: '33%', position: 'relative', boxShadow: 'rgba(0, 0, 0, 0.8) 2px 3px 4px -1px' },
         },
         MiddleColumn: {
             TopColumn: {
@@ -239,10 +244,18 @@ export const theme = {
         VacancyDescription: {
             rootStyle: { paddingBottom: '86px' },
             row: { margin: 0, marginTop: '5%', padding: 0 },
+            span: { fontSize: '24px' },
         },
         VacancyTitle: {
             rootStyle: { margin: 0, marginTop: '5%', padding: 0 },
             span: { fontSize: '10px', letterSpacing: '1.5px' },
+        },
+        projectVacancy: {
+            color: 'black',
+            padding: '12px 30px 12px 30px',
+            background: 'rgba(0, 0, 0, 0.12)',
+            borderRadius: '16px',
+            wrap: { height: '30px', marginTop: '5%', marginRight: '3%' },
         },
         YourCard: {
             rootStyle: { background: 'white', padding: '16px 30px 16px 30px' },
@@ -291,6 +304,9 @@ export const theme = {
             statItem: {
                 display: 'table', margin: '0 auto', color: 'rgba(0, 0, 0, 0.54)', padding: '12px',
             },
+            wrap: {
+                marginLeft: 0, marginRight: 0, marginTop: '1%',
+            },
         },
         Thematics: {
             margin: '1%',
@@ -299,6 +315,7 @@ export const theme = {
         CreateForm: {
             rootStyle: { background: 'white', padding: '20px' },
             row: { margin: 'auto' },
+            span: { fontSize: '34px', letterSpacing: '0.25px' },
         },
         DateOfEvent: { marginTop: '5%' },
         Detail: {
@@ -334,6 +351,7 @@ export const theme = {
         role: { marginBottom: '3%' },
     },
     Navigate: {
+        display: { display: 'contents' },
         exit: { marginTop: '25%', marginBottom: '5%', padding: '10px' },
         unExit: { marginTop: '5%', marginBottom: '5%', padding: '10px' },
     },
@@ -368,12 +386,14 @@ export const theme = {
         marginTop: '2%',
         marginBottom: '2%',
     },
-    CommandForm: { fontSize: '14px', color: 'rgba(0, 0, 0, 0.54)' },
+    CommandForm: { fontSize: '14px', color: 'rgba(0, 0, 0, 0.54)', display: 'flex' },
     GoBack: {
         rootStyle: { display: 'flex' },
         img: { height: '19px' },
     },
     EventForm: {
-        col: { fontSize: '14px', color: 'rgba(0, 0, 0, 0.54)' }
+        col: { fontSize: '14px', color: 'rgba(0, 0, 0, 0.54)', display: 'flex' },
     },
+    center: { margin: '0 auto' },
+    Layout: { marginLeft: 0, marginRight: 0 },
 };

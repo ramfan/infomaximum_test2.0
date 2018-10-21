@@ -10,7 +10,7 @@ class Detail extends PureComponent {
         const expertList = [];
         for (let i = 0; i < experts.length; i += 1) {
             expertList.push(
-                <li>
+                <li key={i}>
                     <Descriptions description={experts[i]}/>
                 </li>,
             );

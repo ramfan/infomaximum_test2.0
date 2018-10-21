@@ -3,12 +3,8 @@ import React, { PureComponent } from 'react';
 import { Row, Col } from 'react-grid-system';
 import { withTheme } from 'react-fela';
 import { connect } from 'react-redux';
-import Button from '../Button';
-import Subscriptions from '../Subscriptions';
 import unknownPng from '../../assets/unknownPNG.png';
-import RowDescription from './RowDescription';
-import TextDescription from './TextDescription';
-import AdditionalDescription from './AdditionalDescription';
+
 import NewEventButton from './NewEventButton';
 
 class NewEvent extends PureComponent {

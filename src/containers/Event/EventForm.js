@@ -32,7 +32,7 @@ class EventForm extends PureComponent {
         const fieldsSocial = [];
         for (let i = 0; i < this.props.countFieldsSocial; i += 1) {
             fieldsSocial.push(
-                <Col md={8}>
+                <Col key={i} md={8}>
                     <Field name={`social${i}`} type='text' component={renderField} label='Ссылка на соц. сеть'/>
                 </Col>,
             );
@@ -40,7 +40,7 @@ class EventForm extends PureComponent {
         const mentors = [];
         for (let i = 0; i < this.props.countFieldsMentor; i += 1) {
             mentors.push(
-                <Col md={8}>
+                <Col key={i} md={8}>
                     <Field name={`mentor${i}`} type='text' component={renderField} label='ФИО ментора / эксперта'/>
                 </Col>,
             );
@@ -78,7 +78,7 @@ class EventForm extends PureComponent {
                     <TextFields name={'prise'} type={'text'} label={'Призы'}/>
                     <Row align={'center'}>
                         {mentors}
-                        <Col md={4} style={{ fontSize: '14px', color: 'rgba(0, 0, 0, 0.54)' }}>
+                        <Col md={4} style={this.props.theme.EventForm.col}>
                             <span style={this.props.theme.clickElement} onClick={this.handleAddNewMentorField}><img src={shape} /></span>
                             <span style={this.props.theme.clickElement} onClick={this.handleAddNewMentorField}> &nbsp; ДОБАВИТЬ МЕНТОРА / ЭКСПЕРТА</span>
                         </Col>

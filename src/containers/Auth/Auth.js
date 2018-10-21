@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { Col, Row } from 'react-grid-system';
 import { withTheme } from 'react-fela';
 import { connect } from 'react-redux';
@@ -9,7 +9,7 @@ import HeaderAuth from './HeaderAuth';
 import Role from './Role';
 
 
-class Auth extends PureComponent {
+class Auth extends Component {
     constructor(props) {
         super(props);
         this.toggleHide = this.toggleHide.bind(this);

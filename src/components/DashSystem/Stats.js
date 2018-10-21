@@ -9,7 +9,7 @@ class Stats extends PureComponent {
         const statItems = [];
         for (let i = 0; i < this.props.prop.length; i += 1) {
             statItems.push(
-                <Row justify={'between'} align='center'>
+                <Row key={i} justify={'between'} align='center'>
                     <Col md={1}>
                         <span style={this.props.theme.dashBoardSystem.Stats.dot(colors[i])}></span>
                     </Col>
@@ -20,9 +20,7 @@ class Stats extends PureComponent {
             );
         }
         return (
-            <Row style={{
-                marginLeft: 0, marginRight: 0, marginTop: '1%',
-            }}>
+            <Row style={this.props.theme.dashBoardSystem.Stats.wrap}>
                 <Col md={12}>
                     <img src={this.props.icon} style={this.props.theme.dashBoardSystem.Stats.rootStyle}/>
                 </Col>

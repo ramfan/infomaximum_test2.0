@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Col, Row } from 'react-grid-system';
 import { connect } from 'react-redux';
@@ -11,18 +11,13 @@ import email from '../../assets/email_auth.svg';
 import password from '../../assets/password_auth.svg';
 import user from '../../assets/usernameReg.svg';
 
-class AuthForm extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.path = this.props.creator ? '/dashParticipant' : '/dashSys';
-    }
-
+class AuthForm extends Component {
     render() {
         const {
             handleSubmit, pristine, reset, submitting, describe,
         } = this.props;
-        const path = !this.props.isCreator ? '/dashParticipant' : '/dashSys';
         const { rootStyle, button } = this.props.theme.AuthForm;
+        const path = this.props.creator === false ? '/dashParticipant' : '/dashSys';
         return (
             <Row>
                 <Col md={12} style={rootStyle}>
@@ -39,7 +34,7 @@ class AuthForm extends PureComponent {
                         <Col md={3}/>
                         <Col md={6}>
                             <Route>
-                                <Link to={this.path} style={this.props.theme.linkStyle}>
+                                <Link to={path} style={this.props.theme.linkStyle}>
                                     <span style={this.props.theme.authForm.renderFieldButton()} onClick={this.handleAuth}>{describe}</span>
                                 </Link>
                             </Route>
@@ -55,8 +50,11 @@ class AuthForm extends PureComponent {
 export default reduxForm({
     form: 'AuthForm', // a unique identifier for this form
     validate, // <--- validation function given to redux-form
-})(connect(state => ({
-    isReg: state.duckReducer.getRegisterForm,
-    creator: state.duckReducer.isCreator,
-    participant: state.duckReducer.isParticipant,
-}))(withTheme(AuthForm)));
+})(connect((state) => {
+    console.log('sss', state.duckReducer.isCreator);
+    return {
+        isReg: state.duckReducer.getRegisterForm,
+        creator: state.duckReducer.isCreator,
+        isReady: state.duckReducer.isReady,
+    };
+})(withTheme(AuthForm)));

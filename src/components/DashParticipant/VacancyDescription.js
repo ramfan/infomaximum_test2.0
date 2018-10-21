@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { PureComponent } from 'react';
 import { Row, Col } from 'react-grid-system';
 import { withTheme } from 'react-fela';
@@ -10,7 +11,7 @@ class VacancyDescription extends PureComponent {
             <div style={this.props.theme.dashBoardParticipant.VacancyDescription.rootStyle}>
                 <Row style={this.props.theme.dashBoardParticipant.VacancyDescription.row}>
                     <Col style={this.props.theme.paddingNull}>
-                        <span style={{ fontSize: '24px' }}>{this.props.header}</span>
+                        <span style={this.props.theme.dashBoardParticipant.VacancyDescription.span}>{this.props.header}</span>
                     </Col>
                 </Row>
                 <Row style={this.props.theme.dashBoardParticipant.VacancyDescription.row}>

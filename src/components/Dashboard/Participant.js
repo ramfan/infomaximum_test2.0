@@ -55,7 +55,7 @@ class Participant extends PureComponent {
 
                         </div>
 
-                        <div style={{ width: '33%', position: 'relative', boxShadow: 'rgba(0, 0, 0, 0.8) 2px 3px 4px -1px' }}>
+                        <div style={this.props.theme.dashBoardParticipant.EventsColumns.second}>
                             <Row style={this.props.theme.dashBoardParticipant.MiddleColumn.TopColumn}>
                                 <CommandVacancy/>
                             </Row>

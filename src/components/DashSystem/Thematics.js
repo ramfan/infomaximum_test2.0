@@ -8,7 +8,7 @@ class Thematics extends PureComponent {
         const thematics = [];
         for (let i = 0; i < this.props.thematics.length; i += 1) {
             thematics.push(
-                <Row align={'center'} style={this.props.theme.dashBoardSystem.Thematics}>
+                <Row key={i} align={'center'} style={this.props.theme.dashBoardSystem.Thematics}>
                     <Col md={1}>
                         <img src={vector} alt=""/>
                     </Col>

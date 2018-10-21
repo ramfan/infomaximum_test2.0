@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import { withTheme } from 'react-fela';
@@ -5,8 +6,8 @@ import { withTheme } from 'react-fela';
 class Layout extends PureComponent {
     render() {
         return (
-            <Container fluid style={{ paddingRight: 0, padding: 0 }}>
-                <Row style={{ marginLeft: 0, marginRight: 0, color: 'black' }}>
+            <Container fluid style={Object.assign(this.props.theme.paddingNull, this.props.theme.marginNull)}>
+                <Row style={this.props.theme.Layout}>
                     <Col md={2}>
                         {this.props.left}
                     </Col>

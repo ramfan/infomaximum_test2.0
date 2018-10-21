@@ -25,8 +25,10 @@ export const actionCreators = {
         payload: flag,
     }),
     addParticipant: () => ({ type: actionTypes.ADD_PARTICIPANT_FIELD }),
-    asCreator: () => ({ type: actionTypes.AS_CREATOR }),
-    asParticipant: () => ({ type: actionTypes.AS_PARTICIPANT }),
+    asCreator: flag => ({
+        type: actionTypes.AS_CREATOR,
+        payload: flag,
+    }),
     addSocial: () => ({ type: actionTypes.ADD_SOCIAL_FIELD }),
     addMentor: () => ({ type: actionTypes.ADD_MENTOR_FIELD }),
 };
@@ -41,8 +43,8 @@ const initialState = {
     countParticipants: cuntFieldsParticipants,
     countSocials: cuntFieldsSocial,
     countMentors: cuntFieldsMentor,
-    isParticipant: true,
     isCreator: false,
+    isReady: false,
 };
 
 export const duckReducer = (state = initialState, action) => {
@@ -87,15 +89,8 @@ export const duckReducer = (state = initialState, action) => {
         case actionTypes.AS_CREATOR: {
             return {
                 ...state,
-                isCreator: true,
-                isParticipant: false,
-            };
-        }
-        case actionTypes.AS_PARTICIPANT: {
-            return {
-                ...state,
-                isCreator: false,
-                isParticipant: true,
+                isCreator: payload,
+                isReady: true,
             };
         }
     default: {

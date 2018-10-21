@@ -8,7 +8,7 @@ class Free extends PureComponent {
     render() {
         return (
             <Row>
-                <Col style={{ width: '100%' }}>
+                <Col style={this.props.theme.landingPage.freeStyle.wrap}>
                     <Row justify={'between'}>
                         <Col md={2}></Col>
                         <Col md={8}>

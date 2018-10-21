@@ -19,7 +19,7 @@ class Nav extends PureComponent {
                 <Col md={12} >
                     <Row>
                         <Col md={12} style={logo}>
-                            <Row style={{ margin: '0 auto' }}>
+                            <Row style={this.props.theme.center}>
                                 <Col md={2} style={logo}>
                                     <img src={logoIcon} alt=''/>
                                 </Col>
