@@ -9,6 +9,7 @@ import EventParticipant from './EventParticipant';
 class ParticipantsEvent extends PureComponent {
     render() {
         /* Если вы это видите, извините, я не успел */
+        /* TODO */
         return (
             <Col md={4}>
                 <EventParticipant num={'1.'} avatar={ivan} name={'Иванов Иван'} role={'Программист'}/>

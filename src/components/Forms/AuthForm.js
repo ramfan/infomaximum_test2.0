@@ -32,8 +32,8 @@ class AuthForm extends PureComponent {
                         <Col md={3}/>
                         <Col md={6}>
                             <Route>
-                                <Link to={'/dashSys'} style={this.props.theme.linkStyle}>
-                                    <span style={this.props.theme.authForm.renderFieldButton} onClick={this.handleAuth}>{describe}</span>
+                                <Link to={'/dashParticipant'} style={this.props.theme.linkStyle}>
+                                    <span style={this.props.theme.authForm.renderFieldButton()} onClick={this.handleAuth}>{describe}</span>
                                 </Link>
                             </Route>
                         </Col>

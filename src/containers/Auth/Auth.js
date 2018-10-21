@@ -38,7 +38,6 @@ class Auth extends PureComponent {
                                     <AuthForm describe={'ЗАРЕГИСТРИРОВАТЬСЯ'} username={true}/>
                                 </Col>
                                 : <Col md={12} style={formColumn} >
-
                                     <HeaderAuth />
                                     <SocialAuth headerBlock={'Вход через соц. сети'}/>
                                     <AuthForm describe={'ВОЙТИ'} username={false}/>
