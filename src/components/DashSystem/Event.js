@@ -28,10 +28,10 @@ class Event extends PureComponent {
                     </Row>
                     <Row justify={'start'}>
                         <Col md={2}>
-                            <span style={this.props.theme.authForm.renderFieldButton}>ПОДРОБНЕЕ</span>
+                            <span style={this.props.theme.authForm.renderFieldButton()}>ПОДРОБНЕЕ</span>
                         </Col>
                         <Col md={2}>
-                            <span style={this.props.theme.authForm.renderFieldButton}>РЕДАКТИРОВАТЬ</span>
+                            <span style={this.props.theme.authForm.renderFieldButton()}>РЕДАКТИРОВАТЬ</span>
                         </Col>
                     </Row>
                 </Col>

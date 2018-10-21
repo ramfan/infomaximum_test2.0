@@ -13,7 +13,7 @@ class CreateEvent extends PureComponent {
             <Row style={this.props.theme.systemLayout}>
                 <Col>
                     <Row style={{ marginBottom: '5%' }}>
-                        <GoToBack where={'назад'}/>
+                        <GoToBack where={'назад'} path={'/dashSys'}/>
                     </Row>
                     <Row>
                         <Switch>

@@ -10,7 +10,7 @@ class Layout extends PureComponent {
                     <Col md={2}>
                         {this.props.left}
                     </Col>
-                    <Col md={10}>
+                    <Col md={10} >
                         {this.props.right}
                     </Col>
                 </Row>

@@ -491,21 +491,21 @@ This project setup uses [Webpack](https://webpack.js.org/) for handling all asse
 }
 ```
 
-### `Button.js`
+### `RedButtonton.js`
 
 ```js
 import React, { Component } from 'react';
-import './Button.css'; // Tell Webpack that Button.js uses these styles
+import './Button.css'; Button.js
 
-class Button extends Component {
+class RedBButton.jsomponent {
   render() {
-    // You can use them as regular CSS styles
-    return <div className="Button" />;
+  Buttoncan use them as regular CSS styles
+    return <div className="RedButton" />;
   }
 }
 ```
 
-**This is not required for React** but many people find this feature convenient. You can read about the benefits of this approach [here](https://medium.com/seek-blog/block-element-modifying-your-javascript-components-d7f99fcab52b). However you should be aware that this makes your code less portable to other build tools and environments than Webpack.
+**This is not requiButtoneact** but many people find this feature convenient. You can read about the benefits of this approach [here](https://medium.com/seek-blog/block-element-modifying-your-javascript-components-d7f99fcab52b). However you should be aware that this makes your code less portable to other build tools and environments than Webpack.
 
 In development, expressing dependencies this way allows your styles to be reloaded on the fly as you edit them. In production, all CSS files will be concatenated into a single minified `.css` file in the build output.
 
@@ -521,11 +521,11 @@ This project supports [CSS Modules](https://github.com/css-modules/css-modules) 
 
 CSS Modules let you use the same CSS class name in different files without worrying about naming clashes. Learn more about CSS Modules [here](https://css-tricks.com/css-modules-part-1-need/).
 
-### `Button.module.css`
+### `RedButton.module.css`
 
 ```css
 .error {
-  background-color: red;
+  backButtonlor: red;
 }
 ```
 
@@ -537,24 +537,24 @@ CSS Modules let you use the same CSS class name in different files without worry
 }
 ```
 
-### `Button.js`
+### `RedButton.js.js`
 
 ```js
-import React, { Component } from 'react';
-import styles from './Button.module.css'; // Import css modules stylesheet as styles
+import React, { CompoButton'react';
+import styles from './RedButton.module.css'; // Import css modules Buttont as styles
 import './another-stylesheet.css'; // Import regular stylesheet
 
-class Button extends Component {
+class RedButton extends Component {
   render() {
-    // reference as a js object
-    return <button className={styles.error}>Error Button</button>;
+  Buttonrence as a js object
+    return <button className={styles.error}>Error RedButton</button>;
   }
 }
 ```
 
 ### Result
 
-No clashes from other `.error` class names
+NoButtonfrom other `.error` class names
 
 ```html
 <!-- This button has red background but not red text -->
@@ -567,7 +567,7 @@ No clashes from other `.error` class names
 
 > Note: this feature is available with `react-scripts@2.0.0` and higher.
 
-Generally, we recommend that you don’t reuse the same CSS classes across different components. For example, instead of using a `.Button` CSS class in `<AcceptButton>` and `<RejectButton>` components, we recommend creating a `<Button>` component with its own `.Button` styles, that both `<AcceptButton>` and `<RejectButton>` can render (but [not inherit](https://facebook.github.io/react/docs/composition-vs-inheritance.html)).
+Generally, we recommend that you don’t reuse the same CSS classes across different components. For example, instead of using a `.RedButton` CSS class in `<AcceptButton>` and Buttonutton>` components, we recommend creating a `<RedButton>` component with its own `.RedButtoButton, that both `<AcceptButton>`ButtonjectButton>` can render (but [not inherit](https://facebook.github.io/react/docs/composition-vs-inheritance.html)).
 
 Following this rule often makes CSS preprocessors less useful, as features like mixins and nesting are replaced by component composition. You can, however, integrate a CSS preprocessor if you find it valuable.
 
@@ -800,10 +800,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 Import required reactstrap components within `src/Root.jss` file or your custom component files:
 
 ```js
-import { Button } from 'reactstrap';
+import { RedButton } from 'reactstrap';
 ```
 
-Now you are ready to use the imported reactstrap components within your component hierarchy defined in the render method. Here is an example [`Root.jss`](https://gist.githubusercontent.com/zx6658/d9f128cd57ca69e583ea2b5fea074238/raw/a56701c142d0c622eb6c20a457fbc01d708cb485/App.js) redone using reactstrap.
+Now you aButtonto use the imported reactstrap components within your component hierarchy defined in the render method. Here is an example [`Root.jss`](https://gist.githubusercontent.com/zx6658/d9f128cd57ca69e583ea2b5fea074238/raw/a56701c142d0c622eb6c20a457fbc01d708cb485/App.js) redone using reactstrap.
 
 ### Using a Custom Theme
 
@@ -1374,7 +1374,7 @@ it('renders without crashing', () => {
 });
 ```
 
-Unlike the previous smoke test using `ReactDOM.render()`, this test only renders `<AppRootand doesn’t go deeper. For example, even if `<AppRootitself renders a `<Button>` that throws, this test will pass. Shallow rendering is great for isolated unit tests, but you may still want to create some full rendering tests to ensure the components integrate correctly. Enzyme supports [full rendering with `mount()`](http://airbnb.io/enzyme/docs/api/mount.html), and you can also use it for testing state changes and component lifecycle.
+Unlike the previous smoke test using `ReactDOM.render()`, this test only renders `<AppRootand doesn’t go deeper. For example, even if `<AppRootitself renders a `<RedButton>` that throws, this test will pass.Buttonrendering is great for isolated unit tests, but you may still want to create some full rendering tests to ensure the components integrate correctly. Enzyme supports [full rendering with `mount()`](http://airbnb.io/enzyme/docs/api/mount.html), and you can also use it for testing state changes and component lifecycle.
 
 You can read the [Enzyme documentation](http://airbnb.io/enzyme/) for more testing techniques. Enzyme documentation uses Chai and Sinon for assertions but you don’t have to use them because Jest provides built-in `expect()` and `jest.fn()` for spies.
 

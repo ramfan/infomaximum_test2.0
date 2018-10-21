@@ -21,7 +21,7 @@ class GoToBack extends PureComponent {
         return (
             <Col style={{ display: 'flex' }} onClick={this.goToBack}>
                 <Route>
-                    <Link to={'/dashSys'} style={this.props.theme.clickElement}>
+                    <Link to={this.props.path} style={this.props.theme.clickElement}>
                         <span style={this.props.theme.clickElement}>
                             <img src={back} style={{ height: '19px' }}/>
                         </span>

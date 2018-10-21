@@ -159,9 +159,9 @@ export const theme = {
             display: 'block', textAlign: 'center', textDecoration: 'none', color: 'rgba(0, 0, 0, 0.6)', borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
         },
         headerRow: { height: '50px', marginBottom: '10%' },
-        renderFieldButton: {
-            textAlign: 'center', paddingTop: '5px', paddingBottom: '5px', cursor: 'pointer', color: '#EE0C28', display: 'block',
-        },
+        renderFieldButton: (color = '#EE0C28') => ({
+            textAlign: 'center', paddingTop: '5px', paddingBottom: '5px', cursor: 'pointer', color, display: 'block', fontWeight: 600, letterSpacing: '0.75px', fontSize: '14px',
+        }),
         socialBlock: {
             title: { textAlign: 'center', color: '#FFFFFF' },
             Icon: { display: 'block', margin: '0 auto' },
@@ -179,7 +179,7 @@ export const theme = {
         textDecoration: 'none',
     },
     systemLayout: {
-        background: '#E5E5E5', padding: '44px 100px 100px 100px',
+        background: 'rgba(229, 229, 229, 0.5)', padding: '44px 100px 100px 100px',
     },
     event: {
         root: { margin: '0 auto', background: 'white' },

@@ -15,6 +15,7 @@ import Layout from './components/Layout';
 import CreateEvent from './components/Event/CreateEvent';
 import System from './components/Dashboard/System';
 import Nav from './components/Navigate/Nav';
+import Participant from './components/Dashboard/Participant';
 
 class Root extends Component {
     render() {
@@ -33,11 +34,13 @@ class Root extends Component {
                                         <Route path='/event/create' component={Nav}/>
                                         <Route path='/dashSys' component={Nav}/>
                                         <Route path='/event/profile' component={Nav}/>
+                                        <Route path='/dashParticipant' component={Nav}/>
                                     </Switch>
                                 } right={
                                     <Switch>
                                         <Route path='/event' component={CreateEvent}/>
                                         <Route path='/dashSys' component={System}/>
+                                        <Route path='/dashParticipant' component={Participant}/>
                                     </Switch>
                                 }/>
                             </Switch>
